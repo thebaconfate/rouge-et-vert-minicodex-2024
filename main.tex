@@ -1,0 +1,3776 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{imakeidx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{silence}
+\usepackage{xparse} % For defining new commands
+\usepackage{expl3}
+\usepackage[T1]{fontenc}
+\usepackage{imakeidx}
+
+\WarningFilter{latex}{Underfull \vbox} % Suppress the specific warning
+\setlength\parskip{\baselineskip}
+\definecolor{gray}{RGB}{102, 102, 102}
+\newcommand{\spacing}{2mm}
+\newcommand{\info}[1]{
+    \textcolor{gray}{\small #1}
+}
+\ExplSyntaxOn
+
+% Define a command to process a list with a custom separator
+\NewDocumentCommand{\mapItalics}{ m m }{
+  \seq_set_split:Nnn \l_tmpa_seq{ #2 }{ #1 } % Split the list with the custom separator
+  \seq_map_inline:Nn \l_tmpa_seq{
+      \textit{~##1}\\
+  }
+}
+
+\NewDocumentCommand{\map}{ m m }{
+  \seq_set_split:Nnn \l_tmpa_seq{ #2 }{ #1 } % Split the list with the custom separator
+  \seq_map_inline:Nn \l_tmpa_seq{
+      ~##1\\
+  }
+}
+
+\NewDocumentCommand{\stanza}{ m o }{
+    \IfNoValueTF{#2}{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+            \map{#1}{;}
+        \end{tabularx}
+    }{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+            \map{#1}{#2}
+        \end{tabularx}
+    }
+}
+
+\NewDocumentCommand{\chorus}{ m o }{
+    \IfNoValueTF{#2}{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+            \mapItalics{#1}{;}
+        \end{tabularx}
+    }{
+        \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+            \mapItalics{#1}{#2}
+        \end{tabularx}
+    }
+}
+
+\NewDocumentCommand{\stanzaSingleExtra}{ m o o }{
+  \IfNoValueTF{#2}{
+      \IfNoValueTF{#3}{
+          \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c}
+              \map{#1}{;}
+          \end{tabularx}
+      }{
+          \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c}
+              \map{#1}{#3}
+          \end{tabularx}
+      }
+  }{
+  \IfNoValueTF{#3}{
+      \begin{tabularx}{#2\textwidth}{>{\raggedright\arraybackslash}X c}
+          \map{#1}{;}
+      \end{tabularx}\\
+  }{
+      \begin{tabularx}{#2\textwidth}{>{\raggedright\arraybackslash}X c}
+          \map{#1}{#3}
+      \end{tabularx}\\
+      }
+  }
+}
+
+
+
+
+
+\ExplSyntaxOff
+\title{\textbf{ROUGE-ET-VERT CANTUS II}}
+\author{}
+\date{\Large 13/11/2024}
+\makeindex[columns=1, title=INDEX, options= -s index.ist]
+\begin{document}
+\maketitle
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/banner.jpg}
+\end{figure}
+\thispagestyle{empty}
+\newpage
+\begin{center}
+  \section*{REGELS VAN DE CANTUS}
+\end{center}
+%\flushleft
+Art. 1\\
+De cantus wordt geopend met:"Silentium! Surgite! De clubliederen!" Vervolgens worden de clubliederen zezongen gevolgd door het Lied van Geen Taal en de eerste strofe van het Gaudeamus Igitur.\\\\
+Art. 2\\
+De schachten zijn verantwoordelijk voor het rondbrengen van het bier of drank dat voorzien wordt voor de corona.\\\\
+Art. 3\\
+De cantus wordt voorgezeten door, de voorzitter van 't VAT, KBS en Woltje alsook degenen die door de voorzitters worden aangeduid. De voorzitters van de bovenvermelde verenigingen wisselen af, de voorzitter die het woord heeft wordt hierna ``De senior'' genoemd.\\\\
+Art. 4\\
+    De liederen worden aangehoffen door één commilito of meerdere commilitones in de corona, altijd aangeduid door de senior. Indien het correct is wordt het ingezet met ``ad omnes'', zo niet wordt er een tweede poging gewaagd. De derde poging wordt gereserveerd aan de huidige senior of cantor.\\\\
+Art. 5\\
+Gedraag u naar uw leeftijd.\\\\
+Art. 6\\
+De cantus wordt afgesloten met "het Tsjechisch drinklied gevolgd door de "Oude rolderskracht" en "Le semeur".\\\\
+Art. 7\\
+We behouden ons het recht boycotters, paljassen, aanstellers en amokmakers een sanctie op te leggen en in het slechtste geval zonder terugbetaling van de cantus te verwijderen.\\\\
+Art. 8\\
+De senior heeft altijd gelijk
+\newpage
+\thispagestyle{empty}
+\section*{CLUBLIEDEREN}
+\subsection*{KBS: LIED VAN DE BRUSSELSE GEUS}
+\index{KBS: Lied van de Brusselse Geus}
+\textcolor{gray}{\small T: Bert Mosselmans, 1988 M: ‘Lied van Koppelstock de veerman’}
+\\\\
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X c}
+    In naam van K.B.S. doet open ’t café \\
+    De Brusselaar sluipt door de stad \\
+    Hij dorst naar het bier in zijn Brabantse stee \\
+    Doet open of ’t café ligt plat \\
+    En haast u of ’k leg hier uw deur op den toog \\
+    En Manneke Pis zeikt dan recht in uw oog \\
+    De Brusselaar heeft dorst, geef hem bier! & (BIS)\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X c}
+De vrijzinnigheid is nu troef in dit land\\
+Hang de kaloot in een boom\\
+K.B.S. regeert weer met ijzeren hand\\
+Gaat pissen op het papendom\\
+En gaan we dan ’s morgens bezopen naar kot\\
+Dan zingen we luid en harmonisch tot slot\\
+    Het Lied van de Brusselse Geus! & (BIS)\\
+\end{tabularx}
+\subsection*{KBS-KREET}
+\index{KBS-Kreet}
+\textcolor{gray}{M: ‘When Johnny comes marching home’}
+\\\\
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X | c}
+    K!-K! &  \\
+    B!-B! &  \\
+    S!-S!  &  (BIS) \\
+    KBS! &   \\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X}
+Wie maakt er hier het meest plezier? \\
+’t Zijn wij, ’t zijn wij\\
+Wie drinkt er hier zo’n massa’s bier?\\
+’t Zijn wij, ’t zijn wij\\
+We zijn nie groot, maar toch zo fijn\\
+En de kaloot, die krijgen we klein\\
+Want we zijn de Kring der Brusselse Studenten\\
+\end{tabularx}
+\subsection*{'t VAT: HET VAT-LIED}
+\index{HET VAT-LIED}
+\textcolor{gray}{T: De Wizze M: ‘Le grenadier de Flandre’}
+\\\\
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+Dat nu tot boordevol\\
+Men onze pint volschenke\\
+Dat nu weer met een kol\\
+Het bier ons blijve wenke\\
+We blijven alle dol\\
+Van het gerstegeschenke\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+    \textit{We zijn van ’t VAT}\\
+    \textit{We zuipen ons zat}\\
+    \textit{We zien de pint in ’t groot, dedju}\\
+    \textit{Een porreke op de schoot, dedju}\\
+    \textit{Discipels van Bacchus}\\
+    \textit{En van de heer Gambrinus}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+We vrezen niet of nooit\\
+Zij die ons nu belagen\\
+De flik of de kaloot\\
+En al die and’re zagen\\
+We vinden totterdood\\
+In ’t goede bier behagen\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+En wanneer de dag komt\\
+Dat wij dan moeten gaan\\
+Dat niemand dan verstomd\\
+Het is nog niet gedaan\\
+Ik wil als doodskist rond\\
+In een vat bier vergaan \\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+En wanneer ik paraat\\
+Sta voor de heer Sint Pietre\\
+Dan zeg ik: "Beste maat\\
+De porren heb ik liever\\
+En ook het bier van ’t VAT\\
+Stuur mij maar weer wat dieper" \\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+    {\small (Laatste refrein:)}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+We blijven van ’t VAT\\
+We poepen ons nat\\
+Een porreke in ons bed, dedju\\
+We zuigen aan haar tet, dedju\\
+Discipels van Bacchus En van de heer Gambrinus    \\
+\end{tabularx}
+\subsection*{DE VATKREET}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c}
+    GELEK AS DE... BIESTE!! & (TER)
+\end{tabularx}
+\subsection*{WOLTJE: SPREKT A MOOJERTOÊL}
+\textcolor{gray}{\small T: Michaël Heiremans, 2006 M: ‘La Chanson du Roi Albert’}
+\\\\
+\stanza{
+    Da was nen oevend in ne staminei te Jet’;
+dacht ik veneir, le Bruxellois es duud.;
+Den iene Woel, daa wilt gien Vloms meir leire;
+en den andere daan kent gien waurd Frans.;
+Waddesmeda, waddes da veu geziever?;
+Le Bruxellois dad’es toch zu’n schuun toêl!;
+De Brusseleir moot da toch kunne spreike;
+En aaft a vast, en sprekt a moojertoêl!;
+En aaf a recht, en sprekt a moojertoêl!;
+LE BRUXELLOIS!
+}
+\stanza{
+Mo ik em chance, ça est pas tout a fait perdu;
+Woltje es doe, le Bruxellois REVIT;
+Ce dialect est le plus beau que je connais;
+Un mengeling de Français en van Vloms;
+Aussi avec, les chansons que l’on connait tous;
+``En doebaa nen dikke cervola'';
+Woltje es fier de pouvoir vous l’apprendre ;
+En aaft a vast, en sprekt a moojertoêl!;
+En aaft a recht, en sprekt a moojertoêl!;
+LE BRUXELLOIS!
+}
+\stanza{
+    Bij Woltje kundet allemoêl gon leire,;
+alles van Toone, Tishken en Lambic;
+De chansonettekes en poezeekes,;
+et les histoires van onze Jef Kazak!;
+Lange Jojo en gans zaainen discografee;
+En uuk de Vlomse versies van Jacques Brel.;
+Dans un cantus in d’èet van de Marolle;
+En aaft a vast, en sprekt a moojertoêl!;
+En aaft a recht, en sprekt a moojertoêl!;
+LE BRUXELLOIS!
+}
+\newpage
+\section*{OFFICIËLE LIEDEREN}
+\subsection*{LIED VAN GEEN TAAL}
+\index{LIED VAN GEEN TAAL}
+%\begin{wrapfigure}{R}{0.17\textwidth}
+%\centering
+%\includegraphics[width=0.30\textwidth]{images/BSGschild.png}
+%\end{wrapfigure}
+\stanza{
+    Brusselse studenten van de "Klauwaert ende Geus";
+    Strijden wij voor vrijheid, steeds getrouw aan onze leus;
+    Roemberuchte rolders blijven wij tot in de dood;
+    De schrik van de kaloot.
+}
+\chorus{
+    Glorie, glorie, alleluja;
+    Brusselse studenten van de ``Klauwaert ende Geus'';
+    Glorie, glorie, alleluja;
+    Getrouw aan onze leus.
+}
+\stanza{
+    Hij die ’t licht niet kan verdragen der ``Geen Taalse zon'';
+    Hij weze een kaloot of een bekrompen franskiljon;
+    Moet maar zien dat hij in onze weg niet komt te staan;
+    Of ’t zal hem slecht vergaan.
+}
+\stanza{
+    Fiere dragers van de fakkels van de VUB;
+    Dragen w’in de wereld en doorheen heel Vlaanderen mee;
+    Onze wil tot leven vrij van dwang en levensblij;
+    ``Geen Taler'' blijven wij.
+}
+\subsection*{GAUDEAMUS IGITUR}
+\index{GAUDEAMUS IGITUR}
+\stanzaSingleExtra{
+    Gaudeamus igitur, iuvenes dum sumus;& (BIS)µ
+    Post iucundam iuventutem,µ
+    Post molestam senectutemµ
+    Nos habebit humus! & (BIS)
+}[0.8][µ]
+\stanzaSingleExtra{
+    Ubi sunt qui ante nos in mundo fuere? & (BIS);
+    Vadite ad superos,;
+    Transite ad inferos,;
+    Ubi? Iam fuere. & (BIS)
+}[0.8]
+\stanzaSingleExtra{
+    Vita nostra brevis est, brevi finietur, & (BIS);
+    Venit mors velociter,;
+    Rapit nos atrociter,;
+    Nemini parcetur. & (BIS)
+}[0.8]
+\stanzaSingleExtra{
+Vivat academia, vivant professores, & (BIS);
+Vivat membrum quodlibet,;
+Vivant membra quaelibet,;
+Semper sint in flore! & (BIS)
+}[0.8]
+\stanzaSingleExtra{
+Vivant omnes virgines graciles formosae! & (BIS);
+Vivant et mulieres,;
+Tenerae, amabiles.;
+Bonae, Laboriosae! & (BIS)
+}[0.8]
+\stanzaSingleExtra{
+Vivat et res publica et qui illam regit! & (BIS);
+Vivat nostra civitas,;
+Maecenatum caritas,;
+Quae nos hic protegit! & (BIS)
+}[0.8]
+\stanzaSingleExtra{
+Pereat tristitia, pereant osores, & (BIS);
+Pereat diabolus,;
+Quivis antiburchius,;
+Atque irrisores! & (BIS)
+}[0.8]
+\subsection*{TSJECHISCH DRINKLIED}
+\index{TSJECHISCH DRINKLIED}
+\stanzaSingleExtra{
+Drink uit dan, broeder, drink!;
+Drink uit tot op den grond & (BIS);
+Want nooit zien w’ons weerom;
+Voor ’t volle jaar is rond.
+}[0.8]
+\stanza{
+En daarom drink maar, drink maar, drink maar,;
+Zolang de beker ons nog wenkt,;
+En daarom drink maar, drink maar, drink maar,;
+Zolang een druppel wijn nog blinkt:;
+En daarom drink maar, drink maar, drink maar,;
+Eer we malkander ’t afscheid bi’en,;
+En daarom drink maar, drink maar, drink maar,;
+Drink op het vrolijk wederzien!
+}
+\newpage
+\subsection*{OUDE ROLDERSKLACHT}
+\index{OUDE ROLDERSKLACHT}
+[De lichten worden gedoofd en de eerste vier strofen worden heel plechtig en ingetogen gezongen.]\\\\
+\stanza{
+O vrij-studentenheerlijkheid;
+Waar zijt gij thans verzwonden?;
+O keer nog eenmaal, schone tijd,;
+Zo vrij, zo ongebonden!;
+Ik zoek U langs mijn wegen weer;
+En vind uw sporen nimmer meer!
+}
+\\\\\\
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X | c}
+  \textit{O jerum, jerum, jerum} & \\
+\textit{O quae mutatio rerum?}  & (BIS)\\
+\end{tabularx}\\\\\\
+\begin{tabularx}{\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+   \hspace{5mm} & {\small De oudstudenten staan recht} \\
+\end{tabularx}
+\\\\\\
+\stanza{
+Waar zijn zij die voor ’t Brussels\footnote{In de originele vertaling gaat het hier om het "Werchters"
+bier, met name Jack-Op, dat in het begin van de vorige eeuw
+heel populair was bij de Leuvense studenten. Het wordt sinds
+1869 gebrouwen door brouwerij Felix van Roost te Werchter
+in de stoombrouwerij ’De Palmboom’. Tegenwoordig wordt
+het gebrouwen in de brouwerij ’Belle-Vue’.} bier;
+Hun laatste cent verdronken,;
+Als wereldbazen, op de zwier;
+Met volle potten klonken?;
+Zij gingen, ’t hart gebroken, voort;
+Van hier naar ’t stil geboorteoord.;}
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+   \textit{Refrein}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+    \hspace{5mm} & {\small Studenten toegepaste, exacte, industriële, farmaceutische, politieke, economische en sociale wetenschappen, evenals de handelsingenieurs, architecten en studenten horteco, hotel en toerisme staan recht.}\\
+\end{tabularx}
+\\\\\\
+\stanza{
+   Daar ligt er een als man van plicht,µ
+Op een bureau gebogen;µ
+}[µ]
+\\\\\\
+\begin{tabularx}{\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+    \hspace{5mm} & {\small Studenten letteren en wijsbegeerte, pedagogie, psychologie, agogiek, toe
+gepaste taalkunde, sociaal-agogisch werk en lerarenopleiding staan recht.}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+Een ander ontplooit met koud gezicht\\
+Zijn schoolmeestersvermogen.\\
+Wie dacht ooit dat een schurk zo fijn\\
+Zou zo pedant geworden zijn?\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+   \textit{Refrein}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+    \hspace{5mm} & {\small Studenten genees- en tandheelkunde, verpleegkunde, sport en kine staan
+recht.}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+   Een dokter preekt de matigheid.\\
+En was een grote rolder:\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+    \hspace{5mm} & {\small Bestuursleden staan recht.}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+Ministers gaan met statigheid, \\
+En woonden hier op zolder; \\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+    \hspace{5mm} & {\small Studenten rechten en criminologie staan recht.}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+De rechter straft nu drankmisbruik \\
+En vroeger sliep hij met de kruik! \\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+   \textit{Refrein - Chorus}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+    \hspace{5mm} & {\small Het licht gaat aan. Gans de corona staat recht en men reikt elkaar
+met gekruiste armen de handen, terwijl men nu met vol enthousiasme
+verderzingt.}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+Sa vrienden reikt elkaar de hand,\\
+Opdat hij zich vernauwe:\\
+Der trouwe vriendschap heil’ge band.\\
+De heil’ge band der trouwe.\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+    \hspace{5mm} & {\small De glazen worden geheven en geklonken.}\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+Klinkt aan en heft omhoog het glas. \\
+Nog leeft het oud studentenras!\\
+\end{tabularx}
+\\\\\\
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+\textit{Laatste Refrein:}\\
+\textit{Bibamus laeti merum;} \\
+\textit{Non est mutatio rerum!} \\
+\end{tabularx}
+\subsection*{LE SEMEUR}
+\index{LE SEMEUR}
+\begin{flushleft}
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+Semeurs vaillants du rêve,\\
+Du travail, du plaisir,\\
+C’est pour nous que se lèeve\\
+La moisson d’avenir\\
+Ami de la science,\\
+Léger, insouciant\\
+Et fou d’indépendance\\
+Tel est l’étudiant!\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+\textit{Frère, chante ton verre,}\\
+\textit{Et chante ta gaîté,}\\
+\textit{La femme qui t’est chèere}\\
+\textit{Et la fraternité}\\
+\textit{À d’autres la sagesse}\\
+\textit{Nous t’aimons Vérité}\\
+\textit{Mais la seule maîtresse}\\
+\textit{Ah, c’est toi, Liberté!}\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+Aux rêves de notre âge\\
+Larges, ambitieux\\
+S’il était fait outrage\\
+Gare à l’audacieux!\\
+Si l’on osait prétendre\\
+À mettre le Holèa\\
+Liberté, pour défendre\\
+Tes droits nous serions là!\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.7\textwidth} {
+   >{\raggedright\arraybackslash}X }
+Une aurore nouvelle\\
+Grandit èa l’horizon\\
+La Science immortelle\\
+Eclaire la Raison\\
+Rome tremble et chancelle\\
+Devant la Vérité\\
+Serrons-nous autour d’elle\\
+Contre la papauté!\\
+\end{tabularx}
+\end{flushleft}
+\newpage
+\section*{NEDERLANDSTALIGE ET BRUXELLOISE LIEDEREN}
+\subsection*{BEIAARDLIED}
+\index{BEIAARDLIED}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X c}
+   Dan mocht de Beiaard spelen\\
+Van al uw torentransen,\\
+Dan mocht de grijsheid kwelen,\\
+Dan mocht de jonkheid dansen. & (BIS)\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X c}
+   Dan schiept gij opgetogen\\
+Tot prinsen, Vlaamse steden,\\
+Die onder zegebogen\\
+Op zegewagens reden. & (BIS)\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X c }
+   Dan liet gij uw rondelen\\
+En kanten gevels glanzen,\\
+Dan hieldt gij landjuwelen,\\
+Dan vlocht gij lauwerkransen. & (BIS)\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X c}
+   Dan spreiddet gij voor d’ogen\\
+Uw vrijheid, kunst en zeden,\\
+Op allen mocht gij bogen,\\
+Om allen werdt g’aanbeden. & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{HET BELEG VAN BERG-OP-ZOOM}
+\index{BELEG VAN BERG-OP-ZOOM, HET}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Merck toch hoe sterck nu in ’t werck sich al steld\\
+Die t’allen tyd so ons vryheyt heeft bestreden.\\
+Siet hoe hy slaeft, graeft en draeft met geweld\\
+Om onse goet en ons bloet en onse stede!\\
+Hoor de Spaensche trommels slaen!\\
+Hoor Maraens trompetten!\\
+Siet, hoe komt hy trecken aen\\
+Bergen te besetten!\\
+Berg-op-Zoom, hout U vroom,\\
+Stut de Spaensche scharen.\\
+Laet ’s lands boom en syn stroom,\\
+Trouw’lyk toch bewaren.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.9\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   ’t Moedige bloedige woedige swaerd\\
+Blonck en het klonck, dat de voncken daer uyt stoven.\\
+Beving en leving, opgeving der aerd,\\
+Wonder gedonder nu onder was nu boven\\
+Door al ’t mynen en ’t geschut,\\
+Dat men daeglycx hoorde;\\
+Menig Spanjaert in syn hut,\\
+In syn bloet versmoorde.\\
+Berg-op-Zoom, hout sich vroom,\\
+Stut de Spaensche scharen,\\
+’t Heeft ’s lands boom en syn stroom,\\
+Trouw’lyck doen bewaren.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Die van Oranje quam Spanjen aen boord\\
+Om uyt het velt, als een helt, ’t geweld te weren;\\
+Maer also dra Spinola ’t heeft gehoord\\
+Treckt hy flocx heen op de been met al syn heeren.\\
+Cordua kruyd spoedig voort\\
+Sach daer niets te winnen;\\
+Don Velasco liep gestoort,\\
+’t Vlas was niet te spinnen\\
+Berg-op-Zoom, hout sich vroom\\
+Stut de Spaensche scharen,\\
+’t Heeft ’s lands boom en syn stroom,\\
+Trouw’lyck doen bewaren.\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{DE BIEREN VAN BRUSSEL}
+\index{BIEREN VAN BRUSSEL, DE}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   \textit{Santé, santé pakt der nog iene mei}\\
+\textit{‘t Is weiral feest in ‘t staminei}\\
+\textit{Santé, santé pakt der nog iene mei}\\
+\textit{‘t Is weiral van ons mei eur prei.}\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   En ons pepeike en ons memeike\\
+Dei droenke Geuze en Kriek van ‘t Vat\\
+En oek ‘t kadeike van ‘t stamineike\\
+Werd van de reuk van ‘t bier strontzat.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Madame van ‘t hoekske nam bei heur koekske\\
+Een klein Framboise en viel flauw\\
+Zeide van ‘t kliekske drinkt dan e Lambikske\\
+Ge zweirt zo’n pint eeuwige trouw.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Faro met vrienden, de oogskes blinken\\
+Den duvel danst me ons oep ‘t vat\\
+Een sloekske drinken en dan weir klinken\\
+Santé, Brussel de schoonste stad.\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{BOERENKERMIS}
+\index{BOERENKERMIS}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   De boerkens smelten van vreugd en plezier\\
+Als d’oogst is binnen gereden.\\
+Zijn gaan met hunne boerinne te bier\\
+En zij maken zeer goede sier,\\
+De bezem steekt ten venster uit.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+\textit{Men danst er, men speelt er al op de fluit}\\
+\textit{Op potten en pannen}\\
+\textit{Op glazen en kannen,}\\
+\textit{Op allerhande geluid:}\\
+\textit{Op messen, op schup en op zoutevat}\\
+\textit{Op hangel, op tangel, op dit en op dat}\\
+\textit{Op trommeltje rom, dom domme dom dom:}\\
+\textit{Op keteltjes, lepeltjes, tikke tik tang}\\
+\textit{En dat gaat zo de helen dag lang.}\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+De boerkens hebben het aards paradijs\\
+Door Adam verloren, hervonden.\\
+Zij roeren de lepel als was het om prijs,\\
+In de rijstpap die hemelse spijs.\\
+De jonkheid kiest een liefje uit.\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{LA BRABANÇONNE}
+\index{BRABANÇONNE, LA}
+\stanzaSingleExtra{
+    Noble Belgique, ô mère chérie;
+À toi nos cœurs, à toi nos bras;
+À toi notre sang, ô Patrie!;
+Nous le jurons tous, tu vivras!;
+Tu vivras toujours grande et belle;
+Et ton invincible unité;
+Aura pour devise immortelle;
+le Roi, la Loi, la Liberté!;
+Aura pour devise immortelle;
+le Roi, la Loi, la Liberté! & (TER)
+}[0.8]
+\stanzaSingleExtra{
+    O dierbaar België, O heilig land der Vad’ren;
+Onze ziel en ons hart zijn u gewijd;
+Aanvaard ons kracht en bloed van ons ad’ren;
+Wees ons doel in arbeid en in strijd;
+Bloei, o land, in eendracht niet te breken;
+Wees immer uzelf en ongeknecht;
+Het woord getrouw,;
+Dat g’ onbevreesd moogt spreken;
+Voor Vorst, voor Vrijheid en voor Recht!;
+Het woord getrouw,;
+Dat g’ onbevreesd moogtspreken;
+Voor Vorst, voor Vrijheid en voor Recht! & (TER)
+}[0.8]
+\stanzaSingleExtra{
+    O liebes Land, o Belgiens Erde;
+Dir unser Herz, Dir unsere Hand;
+Dir unser Blut, dem Heimatherde;
+wir schworen’s Dir, o Vaterland!;
+So blühe froh in voller Schöne;
+zu der die Freiheit Dich erzog;
+und fortan singen Deine Söhne;
+Gesetz und König und die Freiheit hoch!;
+und fortan singen Deine Söhne;
+Gesetz und König und die Freiheit hoch! & (TER)
+}[0.8]
+\subsection*{BRUSSEL, G'ET MAAIN ÈT GESTOULE}
+\index{BRUSSEL, G'ET MAAIN ÈT GESTOULE}
+\stanza{
+Ge moet as ge taaid èt is meigoên;
+‘n wandeling doon dui de stad;
+Ge zaait er soemwaaile van stoem stoên;
+ni weite da Brussel dat ad;
+De gruute mèt pakt op aan oêsem;
+Menneke Pis pakt on a èt;
+En woêvui zing ek na deis chansonette?;
+Oemda kik geire ``keeke-fret''.;
+}
+\chorus{
+    Brussel g’et maain èt gestoule;
+mè a strotsjes op en nei;
+Brussel g’et maain èt gestoule;
+zinge waai in ‘t Marolle kotei.;
+De reu Neuv’, de place de Brouckère,;
+da’s Brussel, ‘petit Paris’;
+Brussel g’et maain èt gestoule;
+van de Nord tot de Midi.
+}
+\stanza{
+    As ketsjes zaain waaile geboure;
+waai aave van treut en van zwans;
+Me zegge de Sjinuusen toure,;
+mo den touren es aaig’lak Zjapans;
+Alle doêge nen demi-gueuze,;
+Alle doêgen es er wa vès,;
+Alle doêgen es er wa neuze,;
+Ne cortège of ‘n Brussel Kermesse
+}
+\newpage
+\subsection*{DISCO ROLLING}
+\index{DISCO ROLLING}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X | c}
+   À bas la calotte, à bas la calotte & \\
+À bas les calotins; & (BIS)\\\end{tabularx}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X c}
+Ils en auront, des coups de poing\\
+Sur la gueule,\\
+Ils en auront, autant qu’ils en voudront,\\
+Avec, avec plaisir,\\
+Dans les ro-oses,\\
+Où dans les bégonias\\
+C’est la même cho-ose\\
+Oui, nous irons chasser ohé, & (BIS)\\
+Oui, nous irons chasser la calotte,\\
+La calotte au poteau & (BIS)\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+En met poeier en met lood,\\
+Schieten wij de sissen dood,\\
+D’r mag gene sisse blijven leven,\\
+En met poeier en met lood,\\
+Schieten wij de sissen dood,\\
+D’r mag gene sisse blijven staan.\\
+\end{tabularx}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X | c}
+En zut zei de pastoor, & \\
+En schoot zijn zaad in een talloor, & (BIS)\\
+’t Was ne boekee met pissebloemen. & \\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X | c}
+En ’t is al jarenlang bekend, & \\
+Dat alles wijkt voor de student, & (BIS)\\
+"VAN BRUSSEL!" & \\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+En hedde gij meubelen,\\
+En hedde gij huisgerief,\\
+Dan kunde gij trouwen met uw lief,\\
+Gij ouwe zot!\\
+En hedde gij meubelen,\\
+En hedde gij huisgerief,\\
+Dan kunde gij trouwen met uw lief!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Tarara,\\\end{tabularx}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X|c}
+Viens poupouleke, &\\
+Viens poupouleke viens, & \\
+O gij appelsienendief, & (BIS)\\
+Ik heb U toch zo lief. &\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X|c}
+En ga je mee, ga je mee, & \\
+Ga je mee gaan varen? & \\
+Ga je mee, ga je mee, & (BIS)\\
+Ga je mee op zee? & \\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+En ’t is te zien aan ons machien,\\
+Dat wij van Brussel wezen,\\
+’t Is te zien aan ons machien,\\
+Da’ wij van Brussel zijn, HOI!\\
+Tatarataaa tarataratatatatataaa, HOI!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Mie Katoen komt morgennoen,\\
+We zullen een pintje drinken,\\
+Mie Katoen komt morgennoen,\\
+We zullen een poepke doen, HOI!\\
+Tatarataaa tarataratatatatataaa, HOI!\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{DE DOCHTER VAN DE PACHTER}
+\index{DOCHTER VAN DE PACHTER, DE}
+\stanza{
+En als we waren aan het weven,µ
+Lagen we gene wol maar wel katoen te geven;µ
+Tot op zeker ogenblik,µ
+Dat ze zei: ``Schei uit ik stik!''
+}[µ]
+\chorus{
+    En op de dochter van de pachter,µ
+Een keer langs voor, een keer opzij,µ
+Een keer langs achter;µ
+En dan zegt ze tegen mij:µ
+``Wa’ ne smeerlap zijdde gij!''
+}[µ]
+\stanza{
+    En ik pruttelde niet tegen,µ
+Want er was voor mij toch niks meer aan gelegen;µ
+Ik had justekens gedaan,µ
+En hij bleef al niet meer staan.
+}[µ]
+\stanza{
+    En als ze dat voelde gebeuren,;
+Want mijne zakdoek ging ik daarmee niet verscheuren,;
+Sloeg ze mij in het gelaat,;
+Maar och god het was te laat.
+}
+\stanza{
+    Ik ben niet al te rap van zinnen,µ
+Maar er schoot mij daar opeens toch iets te binnen;µ
+Ik liet alles maar begaan,µ
+Want ik had een kapootke aan.µ
+}[µ]
+\subsection*{DE GILDE VIERT}
+\index{GILDE VIERT, DE}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   De gilde viert, de gilde juicht,\\
+Wat zit gij daar en blokt en buigt\\
+Nog over uwe boeken?\\
+De wijsheid ligt maar in de kan,\\
+Wie z’elders zoeken wilt die kan,\\
+Doch laat hem, laat hem zoeken.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   \textit{Het beste biertje lust hij niet,}\\
+\textit{Het liefste liedje sust hem niet,}\\
+\textit{Het mooiste meisje kust hem niet.}\\
+\textit{Hoog het glas! Hoog het hart!}\\
+\textit{Hoog het lied!}\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+De beker ruist, de beker schuimt!\\
+Sa makkers, fris en opgeruimd\\
+Het glas aan uwe lippen!\\
+Die op zijn kamer koekeloert,\\
+En geestversnipprend dwaashen snoert,\\
+Drinkt water als de kippen!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Het pijpke dampt in monkelmond,\\
+En spreidt wellustig in het rond\\
+Studentikoze geuren!\\
+Die steeds aan perkamenten kluift,\\
+En perkamenten reuken snuift,\\
+Krijgt perkamenten kleuren!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+De gilde juicht, de gilde viert!\\
+Hoera! De pet omhoog gezwierd,\\
+En nog eens hard geklonken!\\
+De blokker ligt reeds log en loom,\\
+Gekweld door nare blokkersdroom,\\
+Met droge keel te ronken.\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{JAN KLAASSEN DE TROMPETTER}
+\index{JAN KLAASSEN DE TROMPETTER}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   \textit{Jan Klaassen was trompetter in het leger van de Prins}\\
+\textit{Hij marcheerde van Den Helder tot Den Briel}\\
+\textit{Hij had geen geld en hij was geen held}\\
+\textit{En hij hield niet van het krijgsgeweld}\\
+\textit{Maar trompetter was hij wel in hart en ziel}\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+    \hspace{5mm} & {\small Het laatste refrein wordt vanaf de derde regel herhaald - The last chorus is repeated from the third line.}\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Het leger sloeg z’n tenten op voor Alkmaar in ’t veld\\
+En zolang geen vijand zich liet zien was iedereen een held\\
+De kroeg werd als strategisch punt door ’t hoofdkwartier bezet\\
+De officieren brulden: "Jan, kom speel op je trompet!"\\
+Ze werden wakker in de goot in de morgen kil en koud\\
+Maar Jan Klaassen sliep in de armen van de dochter van de schout\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+   >{\raggedright\arraybackslash}X}
+De Prins sprak op inspectie tot de majoor van de compagnie\\
+"Ik zag hier alle stukken wel van mijn artillerie.\\
+Ja, zelfs dat kleine in uw kraag en dat blonde in uw bed.\\
+Maar waar zit dat stuk ongeluk van ’n Jan met z’n trompet?"\\
+En niemand die Jan Klaassen zag die bij de stadspoort zat\\
+En honderd liedjes speelde voor de kinderen van de stad\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Jan Klaassen zei: "Vaarwel mijn lief, ik zie je volgend jaar.\\
+Wanneer de lente terugkomt dan zijn wij weer bij elkaar."\\
+De winter ging, de zomer kwam, de oorlog was voorbij\\
+Maar het leger is nooit teruggekeerd van de Mokerhei\\
+Geen mens die van Jan Klaassen ooit iets teruggevonden heeft\\
+Maar alle kinderen kennen hem; hij is niet dood, hij leeft!\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{JEROME}
+\index{JEROME}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Toen ik een jaar of zeven was\\
+Vroeg ik mijn moeder wat zal ik zijn?\\
+Word ik een boefer of milicien?\\
+’t Is wat ze zei tot mij\\
+O Jerome, Jerome,\\
+Een boefer zijn lul is krom\\
+Word toch maar een milicien,\\
+Want die poepen bien!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Toen ik een jaar of veertien was\\
+Vroeg ik mijn moeder wat zal ik zijn?\\
+Word ik een kaloot of VUB/VAT\footnote{De keuze wordt overgelaten aan de zanger. - The choice is left to the singer.}-ancien?\\
+’t Is wat ze zei tot mij\\
+O Cesar, Cesar,\\
+Een kaloot die komt niet klaar\\
+Word toch maar een VUB/VAT\footnotemark[2]-ancien,\\
+Want die poepen bien!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Toen ik een jaar of achttien was\\
+Vroeg ik mijn moeder wat zal ik zijn?\\
+Word ik een dokter of econoom?\\
+’t Is wat ze zei tot mij\\
+O Alain, Alain,\\
+een dokter die vingert niet bien\\
+Word toch maar een ekonoom,\\
+Want die schiet een zoon!\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Toen ik een jaar of twintig was\\
+Vroeg ik mijn moeder wat zal ik zijn?\\
+Word ik een dopper of voyageur?\\
+’t Is wat ze zei tot mij\\
+O Jean-Claude, Jean-Claude,\\
+Een dopper die poept zich dood\\
+Word toch maar een voyageur,\\
+Want die pakt ze van veur!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   {\small \hspace{5mm} Verdere versies kunnen aan de inspiratie van de corona overgelaten worden}
+\end{tabularx}
+\end{flushleft}
+\subsection*{HET KOEKOEKSLIED}
+\index{KOEKOEKSLIED, HET}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Als de bomen zacht ruisen\\
+In de zomerse regen\\
+Roept de koekoek ons tegen\\
+Om naar buiten te gaan\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+  c >{\raggedright\arraybackslash}X}
+\textit{Holderia tiria holderia koekoek} & (BIS)\\
+  \end{tabularx}
+  \begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+\textit{Holderia tiria ho...}\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Laten w’eens goed door drinken\\
+’t Gerstenat laten zinken\\
+Met ons kiel en ons linten\\
+Onze lever moet eraan\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{KRAMBAMBOULI}
+\index{KRAMBAMBOULI}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   "Krambambouli", zo wordt geheten\\
+Dat schuimend blond studentennat\\
+Wie zou d’r op aard iets beters weten\\
+In alle pijn en smart als dat?\\
+Van ’s avonds laat tot ’s morgens vroeg\\
+Drink ik mijn glas krambambouli,\\
+Krambimbambambouli, krambambouli!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+En brandt mijn hoofd en mijne wangen,\\
+Of breekt mijn herte van verdriet,\\
+Of krult mijn maag in duizend tangen\\
+Of bibbert ’t lijf gelijk een riet,\\
+Ik lach met al die medici\\
+En drink mijn glas krambambouli,\\
+Krambimbambambouli, krambambouli!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Waar ik als edelman geboren,\\
+Keizer zoals Maximiliaan,\\
+Ik stichtte een orde uitverkoren\\
+En als devies hing ik daaraan:\\
+"Toujours fidèle et sans souci\\
+C’est l’ordre du krambambouli,"\\
+Krambimbambambouli, krambambouli!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Is moeders geld nog uitgebleven\\
+En heb ik schulden met de macht,\\
+Heeft ’t zoete lief me niet geschreven\\
+De post van thuis droef nieuws gebracht,\\
+Dan drink ik uit melancholie,\\
+Een schuimend glas krambambouli,\\
+Krambimbambambouli, krambambouli!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+En is mijn geld al naar de donder\\
+Dan peezuig ik van elke schacht,\\
+Al heb ik geld, al zit ik zonder,\\
+Eens wordt het heelal tot stof gebracht,\\
+Want dat is de filosofie,\\
+Naar de geest van krambambouli,\\
+Krambimbambambouli, krambambouli!\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{LIEDJE VOOR LEEN}
+\index{LIEDJE VOOR LEEN}
+\stanza{
+    In’t stamineï il faisait douf;
+Zoveel que j’ai dû faire un poef;
+Slappe peï, je cherche une biche;
+Beu de trop tirer sur mon tich
+}
+\stanza{
+    Dus, j’allais prendre het laatste bus;
+Je t’ai vue, j’étais sur mon sus;
+Ik haaad een dikke stiek in mijn hart;
+Da’s hoeee liedje voor leen is gestart
+}
+\chorus{
+    Leeeeeeeeeeenen te leeeeenen;
+Mijn liefde is te lenen;
+Leeeeeeeeeeenen te leeeeenen;
+Mijn liefde is voor leen
+}
+\stanza{
+    Haar bierbuik en haar lange neus;
+Ik zou graag de la rendre heureuse;
+Que lui dire car j’ai les pépètes;
+Zo bang de passer pour une klette
+}
+\stanza{
+    Ik voel sterk na de vijfde mousse;
+Je me lève pendant le tempus;
+En stoemelings j’ai le réflexe;
+De lire zij naam sur son codex
+}
+\chorus{
+    Refrein
+}
+\stanza{
+    Avec des yeux qui crient braguette;
+Je m’approche de ses dikke tets;
+Ik zeeeg ``Salut Leen'' et ça est zot;
+Elle me regarde comme un bloempot
+}
+\stanza{
+    Hé manneke, ravale ta chic;
+Mijn echte naam is ``p’tite Annick'';
+Mazeeett’, t’es vraiment un zievereir;
+Les Woooltjes même zat boivent des bières
+}
+\chorus{
+    Refrein (ad libitum)
+}
+\subsection*{NIEMAND VERSLAAT DE SAINT-V}
+\index{NIEMAND VERSLAAT DE SAINT-V}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Ons Laura was altijd een braaf student\\
+Zij blokte, zij feestte niet mee\\
+Haar ouders bewaakten haar dag en nacht\\
+Toen kwam ze naar de VUB\\
+Ze liet zich dan dopen ’s nachts in de tent\\
+Z’was blauw, het zat haar niet mee\\
+Haar ma, niet content, vond het decadent\\
+Maar Laura gaat wel naar Saint-V\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   \textit{Lalala...}
+\textit{Want de Saint-V is van iedereen}\\
+\textit{Een glas, een kus, goed gevoel}\\
+\textit{Het lijkt misschien soms op een zottenfeest}\\
+\textit{Maar ’t heeft wel ook zeker een}\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}doel
+De Jos is moe en gepensioneerd\\
+Kapot, gebogen en oud\\
+Maar één keer per jaar, grijpt hij weer naar haar\\
+Die klak waar hij zo veel van houdt\\
+Hij was jaren t’rug praeses van zijn kring\\
+Nu moet hij met ’t vrouwtje mee\\
+Vandaag echter niet, Josiane weet het ook\\
+Vandaag gaat hij naar de Saint-V\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+\textit{Refrein}
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Descendant du Sablon les chars ULB\\
+Si lents, si bien décorés\\
+Se suivant tous au pied d’égalité\\
+Guindaillant avec la VUB\\
+Un jeune comitard bien habitué\\
+Sa toge, tout’ déchirée\\
+Fait découvrir à ses sales bleus pénés\\
+Le folklore autour d’la Saint-V\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   \textit{Refrein}
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Terreur, politiek, er is veel kritiek\\
+De media doet ook wel mee\\
+Klaag gerust voort, ’t is niemand die ’t hoort\\
+Want iedereen is op Saint-V\\
+En als we daar op de zavel staan\\
+We zijn jong, oud, pees en vree\\
+Dan weet je het wel, ’t vergaat niet zo snel\\
+\end{tabularx}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X c}
+Want niemand verslaat de Saint-V & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{NOOIT STERFT HET STUDENTENRAS}
+\index{NOOIT STERFT HET STUDENTENRAS}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Wij zijn hier als student bijeen,\\
+Met Verhaegen hoog in ’t hart,\\
+Ons vriendschap is zoals geeneen\\
+Als geuzen steeds vermaard,\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+In voorspoed steeds bijeen mijn vriend,\\
+In tegenspoed getrouw!\\
+Sta recht, mijn vriend en klinkt het glas;\\
+Nooit sterft ’t studentenras!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+\hspace{5mm} & {\small De melodie wordt verder geneuried terwijl de glazen geklonken worden - The melody is further fumed while the glasses are riveted}\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}Sta recht, mijn vriend en klinkt het glas;
+Nooit sterft ’t studentenras!\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{PIETER BREUGHEL IN BRUSSEL}
+\index{PIETER BREUGHEL IN BRUSSEL}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Pieter Breughel de Oude\\
+Zou opstaan uit de dood\\
+Om de wereld te aanschouwen:\\
+Was ’t bloed er nog zo rood, als karmijn?\\
+Zou er nog oorlog zijn?\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Al eerst ging hem naar Brussel,\\
+Naar zijnen atelier\\
+En hij nam zijnen bussel\\
+Penselen en wat houtskool mee\\
+Naar zijn Brabantse stee.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Hij was nog niet vergeten\\
+Waar dat zijn woonhuis was\\
+Het was wel wat versleten\\
+De memel woonde in zijn kas\\
+Kapot was ’t vensterglas.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Eerst vroeg hem aan de mensen;\\
+Is Spanje hier nog baas?\\
+Leefde naar eigen wensen?\\
+Zijn ze nog even dwaas in ons land?\\
+Of kregen ze verstand?\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+De mensen wouden Breughel\\
+Zijn Brabants niet verstaan\\
+Dus is hem stil en treurig\\
+Naar een café gegaan, die daar in\\
+Zijn jeugd al had gestaan.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Hij vroeg in ’t zuiver Brabants\\
+De kastelein om drank\\
+Maar de patron die zei: "Pardon\\
+Je ne comprends pas Flamand" emmerdant,\\
+Dans le cœur du Brabant!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Pieter Breughel den Ouwe\\
+Die dacht ’t is weer zover\\
+Da’ ze hier den Geuze nog brouwen\\
+Da’s fijn maar dat ’t in ’t Frans moet zijn\\
+Da vin’k een groot sjagrijn.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Het Spaans is nu verdreven\\
+Uit ons klein vaderland\\
+Maar nu hebben we gekregen\\
+Het Frans aan de Marollenkant\\
+Da’s boven mijn verstand.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Piet Breughel is dan droevig\\
+Terug naar zijn graf gegaan\\
+Nadat hem op zijn kamer\\
+Een heel klein maar een fijn schilderij\\
+Vol kleur had doen ontstaan.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+En daarop stond geschilderd\\
+Ne Vlaming in ’t gevang\\
+’t Gevang van zijn kompleksen\\
+De sleutel ligt erbij aan zijn zij\\
+Doet open, maakt hem vrij!\\
+\end{tabularx}
+\end{flushleft}
+%\begin{tabularx}{0.8\textwidth} {
+%   >{\raggedright\arraybackslash}X}
+%En daarop stond geschilderd\\
+%Ne Vlaming in den val\\
+%De val van zijn kompleksen\\
+%’t Fanatisme staat erbij aan zijn zij\\
+%Zo geraakt hem nooit nie vrij!\\
+%\end{tabularx}
+%\end{flushleft}\begin{flushleft}
+    \subsection*{PINNE MOUCHKE}
+    \index{PINNE MOUCHKE}
+    \stanza{
+Ik hem toch zu’n schuun mokke;
+Een echte toffe poes;
+Ge meuigt er ni oen kome;
+Want ik zaain zu jaloes;
+Z’eit een poer dikke tette;
+Een laaif ‘k zeg aa mo da;
+En oek ochottenieren;
+Een schuun mondje en e…
+    }
+    \chorus{
+        Schuune pinne mouchke;
+Just goe gepast veu maa;
+Ze spant goed op maan kopke;
+En ik hem nog giene kaa
+    }
+    \stanza{
+        We rijen op ne zondag;
+Getwieên no de zie;
+We woren goe gelooien;
+Mè twie flesse wisky;
+Ze liep in euren bluute;
+Just veu de casino;
+En’t spel was no de kluute;
+De polis trok oen eu…
+    }
+    \stanza{
+        We woêre good on’t vraaie;
+Twie ueren oon e stuk;
+Alletwie keut van oesem;
+En persees astmatik;
+Dei kiek begost te schrieve;
+``Aaft op ik zaain kapot!'';
+Ik liep weg mè eu kliere;
+En e stukske van eu…
+    }
+    \stanza{
+        Noste moind goên me traave;
+Veui menier de pastuur;
+Eu moema es on’t zoêge;
+De stiene van de meur;
+Ze paast da me goên wachten;
+Tot s’oêves noe de fiest;
+``Moeier da ge moest weite;
+Z’es on’t zeuke no eu…''
+    }
+    \stanzaSingleExtra{
+        \textit{Refrein} & (TER)
+    }[0.7]
+\subsection*{DE ROLDERS IN DE NACHT}
+\index{DE ROLDERS IN DE NACHT}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Iedereen slaapt, het is rustig, het is nacht.\\
+Een smalle straat, een lantaarn, ’t lijkt verdacht:\\
+Geen pandoeren, slechts de stilte houdt de wacht\\
+Plots het brullen van de rolders in de nacht:\\
+Ohohohohohoho... Ohohohohohoho...\\
+Want immer gaan de rolders op de zwier,\\
+Want zij blijven steeds maar\\
+Dorsten naar het bier.\\
+Ohohohohohoho... Ohohohohohoho...\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+En gij zijt mijnen allerbeste vriend,\\
+Zo nen chikken tip heb ekik nog niet gekind:\\
+Doevei drinke w’oep aaf gezondheid nog een pint,\\
+Want dat hedde nondedoeme dik verdiend!\\
+Ohohohohohoho... Ohohohohohohoho...\\
+En wijle gon met ons getwee op de rol\\
+En ons pinten moeten\\
+Op de slag terug vol!\\
+Ohohohohohoho... Ohohohohohohoho...\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Bij Margot was er overlest bagaar\\
+Daar was ambras en dat ambeteerde haar,\\
+Ze werd koleirig en ze deed geweldig raar:\\
+’t Was terug zover want de pandoeren waren daar!\\
+Ohohohohohoho... Ohohohohohohoho...\\
+En toen heeft Margot haar caféke toegedaan\\
+En haar Vlaamse jongens zijn toen\\
+Op een ander moeten gaan!\\
+Ohohohohohoho... Ohohohohohohoho...\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Daar laveert nog een eenzaat door de stad,\\
+Hij is bedronken, hij is bezopen, stapelzat,\\
+Zijn lijf zit vol alkohol en gerstenat...\\
+En hij piert op de kasseien van de stad!\\
+Ohohohohohoho... Ohohohohohohoho...\\
+En nu ligt hij daar te slapen in de straat,\\
+En niemand die heeft kompassie\\
+’t Is maar ne zatte kameraad\\
+Ohohohohohoho... Ohohohohohohoho...\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{ROSEMARIE}
+\index{ROSEMARIE}
+\textcolor{gray}{\small M: Grand Jojo (R.I.P.)}\par
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
+    Z’ei ne schuunen hoot en een poêr schoonen in plastik:\\
+Rosemarie!\\
+En ‘t es pesees een chanteuse van den opera komik:\\
+Rosemarie!\\
+En as ze binnekomt den roopt z’: En avant la musique!\\
+Rosemarie!\\
+\end{tabularx}
+\par
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X c}
+    \textit{We vleegen erin vi den ambiance (ahahaha)}\\
+\textit{Ja vi den ambiance (ahahaha)} & (BIS)\\
+\textit{We vleegen erin vi den ambiance}\\
+    \textit{Mè Rosemarie!}\\
+\end{tabularx}
+\par
+\stanza{
+    Elle a un p'tit chapeau avec une fleur en plastique:;
+Rosemarie !;
+On dirait que c'est une chanteuse de l'opéra-comique;
+Rosemarie !;
+Elle chante un p'tit refrain un petit air qui est dynamique;
+Rosemarie !
+}
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X c}
+    \textit{Une petite chanson sans importance - ah ah ah ah}\\
+    \textit{Mais qui met de l'ambiance - ah ah ah ah} & (BIS)\\
+    \textit{On s'amuse bien, le reste on s'en balance}\\
+    \textit{Rosemarie !}\\
+\end{tabularx}
+\subsection*{RUE DES BOUCHERS}
+\index{RUE DES BOUCHERS}
+\stanza{
+    As ge Brussel wilt zien leive;
+Moede ni veul geld oeitgeive;
+Do es ne cotei wo da ga ni moet geneire;
+Got door nen oevend passeire
+}
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X c}
+    In de rue des Bouchers & (QUATER)\\
+\end{tabularx}
+\par
+\stanza{
+’t Es de stroet van de studente;
+Dei studere op d’agente;
+En dei kadees dei komt van Wemmel en van Loeke;
+Uile slechte reputoese moeke
+}
+\stanza{
+’t Es de stroet par excellence;
+Van d’artiste zonder cense;
+Da komt zaupe, da komt poepe;
+Da komt drinke, da komt stoefe
+}
+\stanza{
+Ge kunt do vanalles vinne;
+Russe, macreaux en sardinne;
+Fritten en moules parquées;
+Da sloege dei Brusseleirs in uile gilé;
+}
+\stanza{
+’t Volk got doe van ’t ien in ’t ander;
+Van hee trekt da dis oep een ander;
+En ze komme mè een giel kudde;
+De mense uile zak oeitschudde
+}
+\stanza{
+Do we’d getapt en do we’d gezaupe;
+Da blaift do tot smerges aupe;
+En as ze do de dui toodroie;
+Den es den oen al on ’t kroie}
+\subsection*{'T SMIDJE}
+\index{SMIDJE, 'T}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}  Wie wil horen een historie\\
+Al van ene jonge smid\\
+Die verbrand had zijn memorie\\
+Daaglijks bij het vuur verhit\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+\textit{Was ik nog, nog met mijnen hamer}\\
+\textit{Was ik nog met geweld op mijn} \\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    c >{\raggedright\arraybackslash}X}
+\hspace{5mm} & {\small Na de laatste strofe wordt het refrein twee maal gezongen.}\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+’k Geef den bras aan al dat smeden\\
+Ik ga naar de Franse zwier\\
+’k Wil mij tot den trouw begeven\\
+Nooit een schoner vrouw gezien\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+’t Is de schoonste van de vrouwen\\
+Maar nooit was er zo’n serpent\\
+Nooit kan zij haar bakkes houden\\
+Nooit is zij eens wel content\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Nooit mag ik een pintje drinken\\
+Nooit mag ik eens vrolijk zijn\\
+Nooit kan ik iemand beschinken\\
+Met een glaasje bier of wijn\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+’k Geef den bras van al dat trouwen\\
+Werd ik maar eens weduwnaar\\
+’k Zou mij in een hoeksken houden\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{TOEN IK IN BRUSSEL KWAM}
+\index{TOEN IK IN BRUSSEL KWAM}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Toen ik in Brussel kwam\\
+Die hoer stond aan de deur,\\
+Ze waggelde met haar tetten\\
+En ik stelde mijn eigen veur.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+\textit{Poepeke zwam, zwam, zwam.}\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Toen ik naar boven ging\\
+Die hoer lag op haar bed,\\
+Ze deed haar beentjes open\\
+En ik heb me d’rop gezet.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}Toen ik naar buiten kwam\\
+Ik voelde mij zo ziek,\\
+Mijn piet begon te lopen\\
+En ik moest naar de kliniek.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}Toen ik in ’t gasthuis lag\\
+Die hoer kwam aan mijn bed,\\
+Ze grabbelde onder ’t laken\\
+Maar mijn piet was afgezet!\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}Toen ik op ’t kerkhof lag\\
+Die hoer stond aan mijn graf,\\
+Ze zei: "Hier ligt die smeerlap\\
+Die zijn cens aan d’ hoeren gaf!"\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+\hspace{5mm} & {\small Moraal van het verhaal: - Moral of the story:}
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Toen die hoer van ’t kerkhof kwam\\
+Toen zag ze daar nen hond,\\
+Met olifantenkloten\\
+En ne piet tot op de grond!\\
+\end{tabularx}
+\end{flushleft}
+\newpage
+\subsection*{VERBROEDERING TE BRUSSEL}
+\index{VERBROEDERING TE BRUSSEL}
+\textcolor{gray}{\small T \& M: Hans Van de Casseye. Naar Vioolconcerto op.35 in RE (Tchaikovsky) \& Bro Hymn (Pennywise)}
+\textcolor{gray}{\small KBS, Winnend lied op het ‘16e Vrijzinnig Zangfeest van Vlaanderen’, 2001}
+\par
+\stanza{
+    Verse schachten komen aan de VUB,;
+Nieuw en alleen in deze grote stad.;
+Weet goed, er is leven naast de les:;
+Sociaal engag’ment en student’koziteit.;
+Vergeet het niet, de tijd die dringt,;
+Studentenleven, mis het niet.
+}
+\stanzaSingleExtra{
+    \textit{Student zijn is meer dan studeren alleen.} & (BIS);
+    \textit{Verbroedering, da’s ons VUB-ideaal.} & (BIS)
+}[0.8]
+\stanza{
+Kijk eens rond in onze hoofdstad.;
+Je zult zien, er zit serieus veel fout:;
+Miserie in d’huizen en armoed’ in ’t straat.;
+Kom, geef die clochard eens een pint.;
+Trek het je aan, ’t is onze taak,;
+Naar buiten te gaan, iedereen tesaam.}
+\stanza{
+In Brussel lopen veel kleurlingen rond,;
+Maar waarom toch zoveel onbegrip?;
+Ons bloed is toch even rood als karmijn?;
+Dan moeten we ook elkander verstaan!;
+Wordt niet meegesleept, door bruin gezweep,;
+’t Is toch zo leep, extreem gedweep.}
+\stanza{
+Miljarden mensen hebben hun geloof.;
+Wij Vrijdenkers hebben er geen nodig.;
+Maar we moeten wel verdraagzaam zijn;
+Tegenover ied’reen die anders denkt.;
+Respecteer iedereen, Afghaan tot Chileen,;
+Minacht niemand, ga hand in hand.}
+\stanza{
+Sprekte Vloms, Français, of nog eet an’ers?;
+Wa in Brussel emme doe gin complexe mei.;
+De Brusseleirs zaain étrangeis gewuun.;
+In ons stad es alleman bienvenu.;
+Codex uit de kast, een Geuze vast,;
+Zingt een lied in ’t Frans, en ’t Nederlands.}
+\stanzaSingleExtra{
+    \textcolor{gray}{\small Laatste refrein:}\\
+\textit{Être étudiant, c’est plus que seulement étudier.} &	(BIS)\\
+\textit{Fraternité, c’est notre idéal de la VUB.} & (BIS)
+}[0.8]
+\subsection*{WAAR HET HART VAN VOL IS, LOOPT DE MOND VAN OVER}
+\index{WAAR HET HART VAN VOL IS, LOOPT DE MOND VAN OVER}
+\stanza{
+    Mijn liefste schat, de dingen die je graag doetµ
+als knuﬀ’len, samen dansen op TD,µ
+steeds zeggen dat ik je graag zie,µ
+omgaan met je jaloezie;µ
+Maar eigenlijk boeit het mij niet.
+}[µ]
+\chorus{
+    Want ik doe graag, graag, graag;
+wat je haat, haat, haat,;
+niet omdat het leuker is;
+Maar ik doe graag, graag, graag;
+wat je haat, haat, haat,;
+al is het maar omdat je ’t niet tof vindt!;
+Verwend kutkind!
+}
+\stanza{
+    En als ik straalbezopen in je bed pis;
+dan denk je dat ik niet weet wat ik doe.;
+Weet: ik ben nog vigilant,;
+’k doe gewoon graag ambetant;
+Jou zien kuisen is plezant!
+}
+\stanza{
+    Ik vind schat dat we eeuwig moeten trouw zijn,;
+maar jij dan toch wel net iets meer dan mij.;
+Zuigt een ander aan mijn piet,;
+’t is niet da ’k ervan geniet.;
+Ik heb graag jouw verdriet.
+}
+\chorus{
+    Refrein;
+}
+\stanza{
+    Wanneer ik met mijn maten aan de toog hang,;
+hebben we gespreksonderwerpen zat.;
+Toch gaat het over je ravijn,;
+kont te groot, tetten te klein.;
+Jou kleineren is zo fijn.
+}
+\stanza{
+    Schat, dit geheim moet ik je nog vertellen:;
+kut of kont voor mij is dat één pot nat.;
+Toch dring ik altijd zo hard aan;
+uit verlangen naar je traan.;
+Nu is uranus naar de maan.
+}
+\chorus{Want ik neuk je graag, graag, graag;
+in je aars, aars, aars,;
+niet omdat het strakker is;
+Maar ik neuk je graag, graag, graag;
+in je aars, aars, aars,;
+al is het maar omdat je ’t niet tof vindt!;
+Verwend kutkind!
+}
+\stanza{
+    {\small Moraal:}
+}
+\stanza{
+Je denkt misschien dat dit lied niet ruimdenkend is,;
+maar onze allerliefste Théodore;
+kreeg ook al in zijnen tijd;
+van zijn wijf het vliegend schijt.;
+Hip hip hoera vrijzinnigheid!
+}
+\newpage
+\section*{FRANSTALIGE LIEDEREN}
+\subsection*{ALOHA}
+\index{ALOHA}
+\textcolor{gray}{\small PK, 2e prijs Festival de la Chanson Estudiantine, 1982}
+\par
+\flushleft
+\stanza{
+    Quand j’ai bu, le soir sous les étoiles;
+J’ai Bruxelles étendu à mes pieds;
+Quand le cantus se termine en guindaille;
+Rêvant des îles je me mets à chanter.
+}
+\chorus{
+    À l’ULB, à l’ULB;
+Le seul plaisir... c’est s’enivrer;
+l’Avenue Héger, plein’ d’cocotiers;
+St V, chez les Vahinés.
+}
+\stanza{
+    Quand le soir, on est à la Bécasse;
+Et j’observe mon dixième verre d’lambic;
+Le parfum me transporte dans l’espace;
+Je m’imagine que j’bois le Pacifique.
+}
+\stanza{
+    La seconde session fait des ravages;
+Mais pour mieux digérer ce coup-là;
+Pas besoin de sable sur les plages;
+A Bruxelles nous dirons "Aloha".
+}
+\stanza{
+    Quand je suis rond et tombe dans une ruelle;
+Les vagues m’emportent chez les Vahinés;
+Mais le matin je m’réveille à Bruxelles;
+Avenue de la Plaine, à la VUB
+}
+\chorus{
+    Laatste refrein:
+}
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X | c}
+    \textit{À la V.U.B.; à la V.U.B.} & \\
+    \textit{Tout le plaisir c’est de drague} & (BIS)\\
+    \textit{À la V.U.B.; à la V.U.B} & \\
+    \textit{Allons baiser les Vahinés.} & \\
+\end{tabularx}
+\subsection*{BANDAIS-TU?}
+\index{BANDAIS-TU?}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si tous les pavés étaient des biroutes,\\
+On verrait les femmes s’coucher sur les routes.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+\textit{Bandais-tu, ban-ban-ban, bandais-tu fort}\\
+\textit{Quand tu pelotais les nichons d’Adèle?}\\
+\textit{Bandais-tu, ban-ban-ban, bandais-tu fort}\\
+\textit{Quand tu tripotais ces divins trésors?}\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si les cons poussaient comm’ des pomm’s de terre,\\
+On verrait les pin’s labourer la terre.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si tous les curés n’avaient plus de verges,\\
+On verrait les nonn’s employer des cierges.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si les cons nageaient comme des grenouilles,\\
+On verrait flotter plus d’un’ pair’ de couilles.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si les cons volaient comme des bécasses,\\
+On verrait les pines partir à la chasse.\\
+\end{tabularx}
+\end{flushleft}\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si tout’s les putains étaient lumineuses,\\
+La terr’ ne serait qu’une immens’ veilleuse.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si tout’s les putains étaient lumineuses,\\
+La terr’ ne serait qu’une immens’ veilleuse.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si tous les cocus avaient des clochettes,\\
+On n’ s’entendrait plus sur notre planète.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si tous les cocus avaient des clochettes,\\
+On n’ s’entendrait plus sur notre planète.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si les cons nichaient comm’ des hirondelles,\\
+On verrait les vits monter à l’échelle.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si les cons pissaient de l’encre de Chine,\\
+On verrait s’y tremper toutes les pines.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si les cons savaient l’ théorèm’ de Rolle, \\
+On verrait les vits leur poser des colles. \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Si les cons dansaient comm’ des ballerines, \\
+On verrait les log’s se garnir de pines. \\
+\end{tabularx}
+\end{flushleft}
+\subsection*{LA BIÈRE
+}
+\index{LA BIÈRE
+}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Elle a vraiment d’une bière flamande \\
+L’air avenant, l’éclat et la douceur, \\
+Joyeux Wallons, elle nous affriande \\
+Et le Faro trouve en elle une soeur. \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+\textit{À plein verre, mes bons amis,} \\
+\textit{En la buvant, il faut chanter la bière,} \\
+\textit{À plein verre, mes bons amis.} \\
+\textit{Il faut chanter la bière du pays.} \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Voyez là-bas la kermesse en délire: \\
+Les pots sont pleins, jouez ménétriers!\\
+Quels jeux bruyants et quels éclats de rire!\\
+Ce sont encore les Flamands de Teniers!\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Aux souverains, portant tout haut leurs plaintes, \\
+Bourgeois jaloux des droits de la cité, \\
+Nos francs aîeux, tout en vidant leur pinte, \\
+Fondaient les arts avec la liberté. \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Quand leurs tribuns à l’attitude altière, \\
+Faisaient sonner le tocsin des be?rois, \\
+Tous ces fumeurs, tous ces buveurs de Bière, \\
+Savaient combattre et mourir pour leurs droits. \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Belges, chantons, à ce refrein à boire, \\
+Peintres, guerriers qui nous illustrent tous, \\
+Géants couchés dans leur linceul de gloire, \\
+Vont se lever, pour redire avec nous. \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Salut à toi, Bière limpide et blonde! \\
+Je tiens mon verre, et le bonheur en main, \\
+Ah! J’en voudrais verser à tout le monde, \\
+Pour le bonheur de tout le genre humain. \\
+\end{tabularx}
+\end{flushleft}
+\subsection*{LA BONNE BIÈRE BRUXELLOISE}
+\index{BONNE BIÈRE BRUXELLOISE, LA}
+\chorus{
+    Amis buvons la bonn' bière bruxelloise;
+C'est une bière qui a du goût;
+Amis buvons la bonn' bière bruxelloise;
+C'est une bière bien de chez nous
+}
+\stanza{
+    Et mon grand-père et ma grand-mère;
+Au temps où Bruxelles brusselait;
+Et puis mon père et puis ma mère;
+Prenaient leur gueuze au cabaret
+}
+\stanza{
+    La Kriek légère, rousse dans son verre;
+Et la Framboise comme apéro;
+Lambik, mon frère, remplis nos verres;
+Sans oublier ce bon Faro
+}
+\stanza{
+    Amis, mes frères, levons nos verres;
+Car pour Bruxelles, il faut trinquer;
+Amis, mes frères, levons nos verres;
+Nous allons boire à l'amitié
+}
+\subsection*{BOUDINS ET TEQULA}
+\index{BOUDINS ET TEQUILA}
+\textcolor{gray}{\small M: ‘Vive la rose’ Guy Béart}
+\par
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Partis entre copains\\
+Pour une noble cause\\
+Direction le Gauguin\\
+Je ne sais pas si j’ose\\
+\end{tabularx}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X | c}
+Le foie ne tiendra pas & \\
+Viv’ la cirrhose, la gueule de bois! & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Un’ fois sur le terrain \\
+Un p’tit " À-fond" s’impose \\
+Avec un verr’ en main \\
+C’est déjà moins morose \\
+\end{tabularx}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X | c}
+Le foie ne tiendra pas & \\
+Viv’ la cirrhose, la gueule de bois! & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Le lendemain matin \\
+Aîe! Aîe! Ma têt’ explose \\
+Je n’ me souviens de rien \\
+Ne cherchons pas la cause \\
+\end{tabularx}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X | c}
+Le lavabo est plein & \\
+J’ai r’tapissé la sall’ de bain! & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Mais sous mon traversin \\
+Ç a ne sent pas la rose \\
+Y a-t-il donc quelqu’un \\
+Infecté de mycoses? \\
+\end{tabularx}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X | c}
+Ne cherchons pas plus loin & \\
+J’ai encore ram’né un boudin! & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Et si un bon matin \\
+Un’ occasion s’arrose \\
+Laissez-lá le brassin \\
+Buvez donc autre chose \\
+\end{tabularx}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X | c}
+Frappez la Tequila & \\
+Vous courez à votre trépas!  & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Mêm’ si on en revient\\
+De ces orgies grandioses \\
+Avec un intestin \\
+Qui se métamorphose\\
+\end{tabularx}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X | c}
+On les regrettera & \\
+La cirrhose et la Tequila.  & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+\hspace{5mm} & {\small }Bij de laatste herhaling wordt "Tequila" vervangen door "gueule de bois".
+\end{tabularx}
+\end{flushleft}
+\subsection*{BRUXELLES}
+\index{BRUXELLES}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Refrein:\\
+\textit{Je veux me promener dans les rues de Bruxelles,}\\
+\textit{Les bruits de cette ville me rendent amoureux,}\\
+\textit{Venez voir comm’ toutes les putes sont belles,}\\
+\textit{Vous y trouverez un accueil chaleureux.}\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Sous la lumière des grands reverbères\\
+On voit un couple s’aimer tendrement\\
+Dans une autre ruelle, une scène cruelle,\\
+Deux sales mecs au poing qui se rentrent dedans.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Les étudiants sont en train de guindailler\\
+Dans les bistrots et dans les cafés,\\
+Et, dehors dans le froid, un clochard solitaire\\
+Cherche une place, pour dormir par terre.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+   Refrein:\\
+\textit{Ik wil deze nacht in de straten verdwalen,}\\
+\textit{De klank van de stad maakt mijn ziel amoureus}\\
+\textit{Al heb ik geen geld om plezier te betalen,}\\
+\textit{Ik vind wel een vrouwke heel net en genereus.}\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   c >{\raggedright\arraybackslash}X}
+\hspace{5mm} & {\small De volgende malen vervangt men in het refrein ’heel net en genereus’ door ’naar mijne keus’. - The following times the chorus replaces 'very neat and generous' with 'of my choice'.}
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+   >{\raggedright\arraybackslash}X}
+Onder de glans van de manestralen, \\
+Wordt heel onze wereld een huwelijksbed, \\
+Ga mee naar de kroegen vol wijven en matrozen \\
+Vergeet uwe naam en al de rest. \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Laat ons dan samen de wereld verteren, \\
+Met klinkende glazen vol Franse wijn, \\
+Zingt mee met de mensen, dat hebben ze geren, \\
+En laat deze nacht nooit een einde zijn. \\
+\end{tabularx}
+\end{flushleft}
+\subsection*{
+    C'ÉTAIT AU TEMPS QUE BRUXELLES GUINDAILLAIT
+}
+\index{C'ÉTAIT AU TEMPS QUE BRUXELLES GUINDAILLAIT}
+\textcolor{gray}{\small m: Bruxelles, Jacques Brel}
+\par
+\chorus{C’était au temps où Bruxelles guindaillait;
+C’était au temps où les students buvaient!;
+C’était au temps où Bruxelles se marrait;
+C’était au temps où les students chantaient!
+}
+\stanza{
+    Place de Brouckère on bouffait des marrons;
+On dégueulait tell’ment on était ronds.;
+En ce temps-là on avait la vérole;
+On n’en bouffait pas moins des caracoles.;
+Et plac’ Saint’-Cath’rine;
+On montrait nos pines;
+Et aussi nos fesses;
+Après la grand’ messe;
+Et le vieux vicaire;
+Ne sachant que faire;
+Nous engueulait, on s’en foutait;
+Et on faisait c’qui nous plaisait.
+}
+\stanza{
+    Au Grand Sablon démarrait la St V;
+On y voyait des pennes par milliers.;
+À la Grand’ Place, on était tous bourrés;
+À l’ "Amigo", les flics nous ont emm’nés;
+Et rue de l’étuve;
+Dans sa petit’ cuve;
+Y’avait Manneken Pis;
+Qu’ entret’nait sa chaud’-pisse;
+Souvenir d’une Ibère;
+Qui s’était laissée faire;
+Des petits seins, un gros vagin;
+Il s’en foutait, elle baisait bien.
+}
+\stanza{À la Bourse on s’arrêtait pour chanter;
+"Le Semeur", en choeur était entonné.;
+Puis tous ensemble on r’gagnait l’ULB;
+Où la soirée n’ faisait que commencer.;
+À la Mort Subite;
+On s’foutait un’ cuite;
+En buvant de la Kriek;
+Et aussi du Lambic,;
+Et chaussée d’ Boondael(e);
+On s’rinçait la dalle;
+Puis au Villon, là chez Simon;
+On n’arrêtait pas d’fair’ les cons.
+}
+\chorus{
+    Laatste refrein
+}
+\chorus{
+    C’était au temps où Bruxelles guindaillait;
+C’était au temps où les students buvaient!;
+C’était au temps où Bruxelles se marrait,;
+C’était au temps où le folklore vivait!
+}
+\subsection*{LA CEINTURE}
+\index{LA CEINTURE}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Partant pour la croisade, un sire fort jaloux\\
+De l’honneur de son nom et de son droit d’époux\\
+Fit fair’ une ceintur’ à solide fermoir\\
+Qu’il attacha lui-mêm’ à sa femm’ un beau soir.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X c}
+Tra la la la la lère, tra la la la la la & (BIS) \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Une fois son honneur solidement bouclé,\\
+Le sire s’en alla en emportant la clef\\
+Depuis la tendr’ Yseult soupire nuit et jour:\\
+"Quand donc t’ouvriras-tu, prison de mes amours?"\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Elle fit la rencontre le soir au fond d’un bois,\\
+D’un jeune troubadour, poète montmartrois,\\
+Elle lui demanda gentiment d’essayer\\
+Si d’un poèt’ l’amour peut fair’ un serrurier.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Elle était désirable et belle tant et tant,\\
+Que le fermoir céda et qu’elle en fit autant.\\
+Depuis bientôt deux ans durait leur tendr’amour,\\
+Quand le seigneur revint avec corn’s et tambours.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X}
+La bell’ étant enceinte depuis bientôt neuf mois,\\
+S’écria: "Sur ma vie, quel malheur j’entrevois,\\
+En mettant la ceintur’ et la serrant un peu\\
+Notre seigneur jaloux n’y verra que du feu."\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Le sir’ s’en aperçut et se mit en courroux,\\\
+"Seigneur, s’écria-t-elle, cet enfant est de vous!\\
+Depuis votre départ, votre fils enfermé\\
+Attend votre retour pour être délivré."\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X}
+"Miracle, cria-t-il, femm’ au con vertueux,\\
+Ouvrons vite la porte au fils respectueux!"\\
+De joie, la tendr’ Yseult, à ces mots, enfantait\\
+Et depuis, la ceintur’, c’est lui qui s’la mettait.\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{CHANT DES BRAVES GUEUX}
+\index{CHANT DES BRAVES GUEUX}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Buvons un coup, buvons en deux,\\
+A la santé des braves gueux,\\
+A la santé du Prince d’Orange,\\
+Et merde aux curés, aux vicaires,\\
+Qui nous ont déclaré la guerre.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{0.8\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Buvons un coup, buvons en deux,\\
+À la santé des crapuleux,\\
+À la santé de Saint Verhaegen,\\
+Et merde aux curés, aux vicaires,\\
+Qui nous ont déclaré la guerre.\\
+\end{tabularx}
+\end{flushleft}
+\newpage
+\subsection*{DIRK FRIMOUT}
+\index{DIRK FRIMOUT}
+\textcolor{gray}{\small M: Ben Laden}
+\par
+\stanza{
+    On m'appelle Dirk Frimout;
+Je suis un astronout;
+Et comme je m'appelle Dirk;
+Ma vie n'est pas un cirque;
+Quand je suis dans l'espace;
+Je trouve pas ça dégueulasse;
+Voler dans l'apesanteur;
+Ca n'me fait pas peur
+}
+\chorus{
+    Dirk, Dirk Frimout;
+Dirk, Dirk Frimout;
+Dirk, Dirk, Dirk, Dirk, Dirk, Dirk Frimout !
+}
+\stanza{
+    On m'appelle Dirk Frimout;
+Le seul astronaute flamoutche;
+Quand je suis dans ma fusée;
+Il faut pas me déranger;
+Armstrong ou Gagarine;
+Pour moi c'est d’ la margarine;
+La galaxie d'Andromède;
+C'est pas pour les bêtes
+}
+\stanza{
+    On m'appelle Dirk Frimout;
+Je ne porte pas de moumoute;
+Mes amis de la NASA;
+Sont tous ici avec moi;
+Si vous regardez en haut;
+J'fais coucou par le hublot;
+Moi partout dans le cosmos;
+J'ai roulé ma bosse
+}
+\stanza{
+    On m'appelle Dirk Frimout;
+Allumez les autoroutes;
+Et les sirènes de police;
+Que je vous voie d'Atlantis;
+Depuis que je vole en l'air;
+Y'a un flamoutche de moins sur Terre;
+Du haut de la voie lactée;
+Je vous envoie mille baisers !
+}
+\subsection*{LES FILLES DE LA ROCHELLE}
+\index{LES FILLES DE LA ROCHELLE}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Sont les filles de La Rochelle\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Qu’ ont armé un bâtiment. & (BIS)\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Ell’s ont la cuisse légère \\
+Et la fess’ à l’avenant.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+\textit{Ah! la feuille s’envole, s’envole}\\
+\textit{Ah! la feuille s’envol’ au vent.}\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Sont parties aux Amériques\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Un matin, la voil’ au vent; & (BIS)\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Ont choisi pour capitaine \\
+Une fille de quinz’ ans.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Nous n’avons pas besoin d’hommes,\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Disaient-ell’s à tout venant; & (BIS)\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Mais au bout de six semaines \\
+Ell’s avaient le cul brûlant.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Un beau soir, une frégate\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Apparut sur l’océan, & (BIS)\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Pleine de jolis pirates, \\
+De beaux gars appétissants.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Ell’s allèr’nt à l’abordage\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+À coups d’ sabre et à coups d’ dents & (BIS)\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Ell’s y prirent l’avantage \\
+Et se ram’nèr’nt des galants.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Et sous la lune jolie,\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Étendues sans vêtements, & (BIS)\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Ell’s ont écarté les cuisses\\
+Tout’s sur le gaillard d’avant.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Ont baisé à perdre haleine\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Jusqu’au clair soleil levant & (BIS)\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Et c’était la capitaine \\
+Qui menait le mouvement. \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Le lend’main le beau navire\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Repartit vers le couchant, & (BIS)\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Et les fill’s de La Rochelle \\
+Le cul frais allaient chantant:\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    c >{\raggedright\arraybackslash}X}
+\hspace{5mm} & {\small Geen refrein!}
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+"J’ai perdu mon pucelage\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Au milieu de l’océan. & (BIS)\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Il est parti vent arrière \\
+Reviendra-z-en louvoyant." \\
+\end{tabularx}
+\end{flushleft}
+\subsection*{GILDE HALEWYN}
+\index{GILDE HALEWYN}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+\textit{Nous chantons le folklore}\\
+\textit{Nous chantons l’amitié}\\
+\textit{Nous veillons Théodore}\\
+\textit{Aux feux de la St V.}\\
+\textit{Nous avons la penne fière}\\
+\textit{Et aimons la Liberté}\\
+\textit{Buvons toujours à l’Université}\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+L’ULB est la mère\\
+D’un idéal de vérité\\
+Et nous irons sans crainte chanter sa lumière\\
+C’est ainsi que la Gilde\\
+Pointant Laurianne vers les cieux\\
+Fera trembler les dogmes religieux\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+La VUB éclaire\\
+De mille feux nos horizons\\
+Nous porterons sa flamme au-delà des frontières\\
+C’est ainsi que la Gilde\\
+Mêlera le gris et le bleu\\
+Aux trois couleurs des bannières des Gueux\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    c >{\raggedright\arraybackslash}X}
+\hspace{5mm} & {\small Gesproken:}\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Gris et bleu... Bier en Geus\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{JE CHERCHE FORTUNE}
+\index{CHERCHE FORTUNE, JE}
+\textcolor{gray}{\small Wordt voorgezongen}
+\par
+\renewcommand{\spacing}{1mm}
+\flushleft
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X | c}
+    Chez l’ boulanger & (BIS)\\
+\end{tabularx}\\
+\vspace{\spacing}
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X | c}
+    Fais-moi crédit. & (BIS)\\
+\end{tabularx}\\
+\vspace{\spacing}
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X | c}
+    J’ n’ai plus d’argent, & (BIS)\\
+\end{tabularx}\\
+\vspace{\spacing}
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X | c}
+    J’ paierai sam’di & (BIS)\\
+\end{tabularx}\\
+\vspace{\spacing}
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X | c}
+    Si tu n’ veux pas & (BIS)\\
+\end{tabularx}\\
+\vspace{\spacing}
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X | c}
+    M’ donner du pain & (BIS)\\
+\end{tabularx}\\
+\vspace{\spacing}
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X | c}
+    J’ te cass’ la gueule & (BIS)\\
+\end{tabularx}\\
+\vspace{\spacing}
+\begin{tabularx}{0.8\textwidth}{>{\raggedright\arraybackslash}X | c}
+    Dans ton pétrin. & (BIS)\\
+\end{tabularx}\\
+\renewcommand{\spacing}{2mm}
+\vspace{\spacing}
+\chorus{
+    Non, c’est pas moi, c’est ma soeur;
+Qui a cassé la machine à vapeur;
+Ta gueule! Ta gueule! Ta gueule!;
+Je cherche fortune, autour du "Chat Noir",;
+Au clair de la lune à Montmartre, le soir.
+}
+\textcolor{gray}{\small Volgende strofen op dezelfde manier…}
+\par
+\stanza{
+    Chez l’ marchand d’ frites...;
+M’ donner des frites;
+J’ te cass’ la gueule;
+Dans tes marmites.
+}
+\stanza{
+    Chez l’ cabar’tier…;
+M’ donner à boire;
+J’ te cass’ la gueule;
+Sur ton comptoir.
+}
+\stanza{
+    Marchand d’ tabac...;
+M’ donner des sèches;
+J’fais dans ta gueule;
+Un’ large brèche.
+}
+\stanza{
+    Chez la putain...;
+Baiser à l’œil;
+J’ te cass’ la gueule;
+Dans ton fauteuil.
+}
+\stanza{
+    Chez l’ autr’ putain...;
+M’ prêter ton con;
+J’ te bou?’ le cul;
+Et les nichons.
+}
+\stanza{
+Chez l’ aubergiste...;
+M’ donner un’ chambre;
+J’ te cass’ la gueule;
+Et les cinq membres.
+}
+\stanza{
+Chez l’ chirurgien...;
+Soigner mon p’tit;
+J’ t’enfonc’ dans l’ cul;
+Ton bistouri.
+}
+\stanza{
+Chez l’ pharmacien...;
+M’ donner d’ potion;
+J’ te cass’ la gueule;
+Dans tes flacons.
+}
+\stanza{
+Chez M’sieur l’ curé...;
+Nous marier;
+J’ te cass’ la gueule;
+Dans l’ bénitier.
+}
+\newpage
+\subsection*{JE VENDS DE CARICOLES}
+\index{JE VENDS DE CARICOLES}
+\textcolor{gray}{\small J. Bloemkuul}
+\par
+\stanza{
+Mon père et ma mère;
+Sont des braves gens;
+Qui depuis biento cinquante ans;
+Font les broquanteurs;
+Qui sont installéï;
+Tout les dimanche;
+Au vieux marchéï;
+J’ai un frère qui est chômeur;
+Un cousin qui est ramoneur;
+Comme j’avais de l’ambition;
+J’ai suivi ma vocation
+}
+\chorus{
+    Moi je vends des caricoles;
+Dans le quartier des Marolles;
+Moi je vends des caricoles;
+Des crabes et des escargots
+}
+\stanza{
+    Mais ne croyez pas;
+Que ce métier là;
+Sa s’apprends en deux ou trois moi;
+Fau persévéré;
+Se perfectionné;
+Sans jamais se decourager !;
+Et quand s’amene le client;
+(Bonjour monsieur);
+Vous lui parler gantillement;
+(Awel schieve lavabo);
+Faut le toucher dans son cœur;
+Autrement il va ailleurs
+}
+\chorus{
+    Refrein
+}
+\textcolor{gray}{\small Gesproken:}
+\par
+\stanza{Geeeernoot en crabbeeee;
+Allé madame s’il vous plait gouté mes bonnes caricoles;
+Hein ils sentent pas bon ?;
+C’est toi qui sens pas bon zieveresse !
+}
+\chorus{
+    Refrein
+}
+\subsection*{MANNEKEN PIS}
+\index{MANNEKEN PIS}
+\stanza{
+    Au monde il est un endroit;
+Où, par le chaud et le froid;
+Règne un noble petit gars;
+Généreux, soir et matin;
+Devant de nombreux témoins;
+Il déverse tout son bien.
+}
+\chorus{
+    Manneken-Pis, Petit gars de Bruxelles;
+Manneken-Pis, Mignon porte-bonheur;
+Manneken-Pis, Arrose les plus belles;
+Manneken-Pis, Arrose tous les cœurs;
+Quand il fait : PSS PSS et refait : PSS PSS;
+En douce, il pousse, gaiement : PSS PSS PSS;
+Manneken-Pis, Une immense innocence;
+Sort à plein jet de son petit sifflet.
+}
+\stanza{
+    Les pays peuvent bouger;
+S'énerver, se provoquer;
+Lui, ne daigne pas changer;
+Même dans l'adversité;
+Il défend la liberté;
+Et le droit de s'exprimer.}
+\stanza{
+Les gens les plus réputés;
+Sont venus pour l'admirer;
+Et lui ont tous présenté;
+Des costumes chamarrés;
+Des vestes emmédaillées;
+Ça ne l’a pas enrayé.
+}
+\stanza{
+J'ai la très forte impression;
+Qu'il aime cette chanson;
+Et la coule à sa façon;
+Et j'irai jusqu'à penser;
+Que pour la recommencer;
+Il demande à bien pisser.
+}
+\subsection*{LA MARCHE DES ÉTUDIANTS}
+\index{LA MARCHE DES ÉTUDIANTS}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Nous sommes ceux qu’anime la folie\\
+Et qui s’en vont ivres de liberté;\\
+Nous faisons guerr’ à la mélancolie\\
+Ou la cachons sous des cris de gaieté.\\
+Bourgeois sans feu, votre vie est banale:\\
+Les préjugés guident vos fronts tremblants;\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Chez nous, l’on a l’humeur paradoxale, &\\
+Le coeur léger, et le gosier brûlant. & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Des vieux gaulois nous gardons la mémoire\\
+En les chantant perchés sur nos tonneaux;\\
+Si le bourgeois veut nous payer à boire,\\
+Nous le suivrons jusqu’au fond des caveaux.\\
+Fraternité, tu nais entre les verres;\\
+Ami, buvons à la Fraternité!\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Haro! Haro sur les mines sévères! & \\
+Pourquoi Bacchus n’est-il pas député? & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Si nous avons parfois la bourse plate,\\
+Nous possédons bien des coeurs de trottins;\\
+Car, en amour, nous sommes des pirates\\
+Braquant partout leurs regards assassins.\\
+Souvent, pourtant, nous devons en rabattre\\
+De nos grands airs de riche Don Juan:\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Dans les bouquins nous allons nous ébattre & \\
+Pour oublier les suppôts de Satan. & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Quand nous serons amis de doctes sages,\\
+Nous sourirons doucement au passé\\
+En regrettant, malgré tout, ce bel âge\\
+D’enthousiasme à jamais effacé.\\
+Alors, tirant sur nos vieilles bouffardes,\\
+Nous redirons à mi-voix nos chansons;\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Elles étaient peut-être un peu gaillardes, & \\
+Mais on hurlait si bien à l’unisson! & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\newpage
+\subsection*{LA MÈRE GASPARD}
+\index{LA MÈRE GASPARD}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Allons la mère Gaspard\\
+\end{tabularx}
+\begin{tabularx}{0.5\textwidth} {
+    >{\raggedright\arraybackslash}X|c}
+Encor’un verre & (BIS)\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Allons la mère Gaspard,\\
+Encor’un verr’, il se fait tard.\\
+Si l’ paternel,\\
+Si le paternel revient,\\
+On lui dira qu’son fils (sa fille)\\
+Est toujours plein, plein, plein...\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    c >{\raggedright\arraybackslash}X}
+ \hspace{5mm} & {\small Tijdens het zingen van deze regels klinkt iemand met de commilito links van hem, deze op zijn beurt met die links van hem en zo heel de corona (of om het even welke groep commilitones) rond. Diegene die aangeklonken wordt bij "tard" drinkt zijn glas ad fundum, terwijl de rest het woord "plein" blijft herhalen, totdat zijn glas leeg is. De commilito die gedronken heeft zet het klinken opnieuw in gang, en trekt zich dan terug uit de corona/groep. Dit geheel wordt herhaald tot er maar twee commilitones overblijven, die dan samen een ad fundum drinken. Dit liedje wordt typisch gezongen bij het einde van een activiteit, voor iedereen huiswaarts keert.}
+\end{tabularx}
+\end{flushleft}
+\subsection*{PARLONS BRUXELLOIS}
+\index{PARLONS BRUCELLOIS}
+\stanza{
+    Dès que l’on est sur les bancs de l’école;
+On doit apprendre des trucs compliqués;
+L’arithmétique, la grammaire espagnole;
+Un tas de bazars sans utilité;
+On nous enseigne le Français, le Chinois;
+Mais on apprend jamais le Bruxellois
+}
+\chorus{
+    Un flaave peï, ça c’est un labekak;
+Un jeu d’zanzi, ça c’est un pitjesbak;
+Un pauvre type, ça c’est un sukkeleir;
+Un qui ziever, c’est un zievereir;
+Un qui boit trop, ça s’appelle un zatlap;
+Un bac à ordures, ça c’est un voeilbak;
+Un petit poisson, ça s’appelle un sprok;
+Un peï sans cheveui, c’est un klachkop
+}
+\stanza{
+    À la radio bien souvent on nous donne;
+Des cours d’histoire, de cuisine et d’Anglais;
+Tous ces sujets n’intéressent personne;
+Mais moi je sais bien ce qui nous plairait;
+Ils devraient bien essayer rien qu’une fois;
+De nous donnei des cours de Bruxellois
+}
+\chorus{Refrein x2}
+\subsection*{ROGER}
+\index{ROGER}
+\stanza{
+    Quand j’arrive dans un café;
+Moi c’est recta une bière comptoir;
+Un paquet de Saint-Michel;
+Et cent balles au trek billard;
+Alleï c’est quoi l’ambiance ici !;
+On s’croirait dans un corbillard;
+Je suis zat comme un camion;
+J’ai déjà bu comme une passoire;
+M’enfin un peu les gars;
+On est quand même ici pour boire;
+C’est pas un monastère;
+Potverdek on est dans un bar
+}
+\chorus{
+    Allez Roger scheille arrangé;
+Vollenbak par terre;
+On a rien d’autre à faire;
+Tous avec Roger, complètement beurrés;
+Archiplein remplis de bière;
+Jusqu’à quand c’qu’on nous enterre
+}
+\stanza{
+    Un p’tit tour dans les coulisses;
+Une bonne petite pisse;
+Serrer la main du musicien;
+Dire bonjour au père de mon fils;
+Aïe ouille quelle histoire;
+La moitié dans mon falzar;
+Retour sur la piste;
+Bon, je remballe ma saucisse
+}
+\stanza{
+    Je commence une farandole;
+En avant tout le café;
+Prêts ! Jugez aux vestiaires;
+On est pas des constipés;
+Allez, tournée générale;
+Pour ceux qui savent encore marcher;
+Maintenant, c’est parti;
+On buvera jusqu’à midi;
+Oué !!!
+}
+\subsection*{VIVRE POUR VIVRE}
+\index{VIVRE POUR VIVRE}
+\textcolor{gray}{\small M: Jaqcues Brel, Naar de film ‘Mon oncle Benjamin’}
+\par
+\chorus{
+    Je veux vivre ma vie avant qu’elle ne soit vieille;
+Entre le cul des filles et le cul des bouteilles
+}
+\stanza{
+    Manger pour manger que ce soit ripaille,;
+Cochonnets bien gras, venaison tendre et dorée;
+Manger pour manger que ce soit riche tripaille,;
+Régaler ses yeux, l’appétit démesuré.
+}
+\chorus{
+    Je veux manger ma vie avant qu’elle ne soit vieille;
+Entre le cul des filles et le cul des bouteilles, mais...
+}
+\stanza{
+    Baiser pour baiser, quelle que soit la femme;
+Prendre du plaisir, part bonheur de faire jouir.;
+Baiser pour baiser, que ce soit avec flamme;
+Caresser ses reins, goûter à tout ses plaisirs
+}
+\chorus{
+    Je veux baiser ma vie avant qu’elle ne soit vieille;
+Entre le cul des filles et le cul des bouteilles, mais...
+}
+\stanza{
+    Chanter pour chanter, que ce soit La Bière;
+Le Gaudeamus, Io Vivat ou Le Semeur,;
+Chanter pour chanter, que ce soit avec mes frères;
+Et dans l’harmonie, entonner avec ardeur...
+}
+\chorus{
+    Je veux chanter ma vie avant qu’elle ne soit vieille;
+Entre le cul des filles et le cul des bouteilles
+}
+\stanza{
+    Mourir pour mourir, que ce soit d’ivresse;
+Sa vie bien remplie, l’esprit plein de souvenirs;
+Mourir pour mourir, que ce soit avec noblesse,;
+Un dernier sourire, croir’ encore à l’avenir;
+Je veux mourir ma vie avant qu’elle ne soit vieille;
+Entre le cul des filles et le cul des bouteilles
+}
+\subsection*{WOLTJE ZIEVEREIR}
+\index{WOLTJE ZIEVEREIR}
+\chorus{
+    Tada tadaaa da, tada tadaaa da;
+Taaa da taaa da ta ! Tchik, boem !
+}
+\stanza{
+    Oui c’est nous les Woltje zievereir;
+Même les Buum ont peur de nos affaires;
+Chaque fois qu’on sort en ville;
+On rentre à midi-pile;
+Au maabuum rendez-vous à l’arrière
+}
+\stanza{
+    Quand on fait un tour on den aa met;
+Les moestasj se disent : Quelle bande de klet !;
+Comme on chante un peu fort,;
+On doit rester dehors;
+T’es altaait volle brol, oh mazette !
+}
+\chorus{
+    Refrein
+}
+\stanza{
+    Si t’as peur du changement climatik folklorik!;
+Waaile blaaive doê dus gien paniek;
+On plantera à la hache;
+Un chant de ramonache;
+Au sous-sol du café neuv’ Saint d’Hic
+}
+\stanza{
+    Bloempansj, moules parquées et carricol;
+Faudrait qu’on apprenne ça à l’école;
+Un p’tit veevan bomma;
+Faites les donc chanter ça;
+Pour lancer leur carrière au Dolle Mol
+}
+\chorus{
+    Refrein
+}
+\stanza{
+    Cherche-tu des réponses philosophiks ?;
+Woltje te fera des pronostiks;
+Sert toi donc une pint bee, en zingt Alé Roger;
+On f’ra l’duup à la gruute Basilik
+}
+\stanza{
+    Zeie ga Marocain, zwet of Chinois.e ?;
+Chez nous on dit : Foert, t’es Bruxellois.e !;
+À BX on est riches, en cultures et en miches;
+Et en zwanze… awel, het is çava !
+}
+\stanza{
+    La la la… La la la…;
+}
+\stanza{
+    À BX on est riche, en cultures et en mi…ches !;
+Et en zwanze… awel, het is çava !;
+Ara !
+}
+\newpage
+\section*{DUITSTALIGE LIEDEREN}
+\subsection*{'S GIBT KEIN SCHÖNER LEBEN ALS STUDENTENLEBEN}
+\index{'S GIBT KEIN SCHÖNER LEBEN ALS STUDENTENLEBEN}
+\textcolor{gray}{\small T: Braun’s Liederbuch für Studenten, 1845}
+\par
+\textcolor{gray}{\small M: Karl Gottlieb Reißiger, 1822}
+\par
+\stanza{
+    ’s gibt kein schöner Leben als Studentenleben,µ
+Wie es Bacchus und Gambrinus schuf;µ
+In die Kneipen laufen und sein Geld versaufenµ
+Ist ein hoher; herrlicher Beruf.µ
+Ist das Moos entschwunden, wird ein Bär gebunden,µ
+Immer geht ’s in dulci jubilo;µ
+Ist kein Geld in Bänken, ist doch Pump in Schenkenµ
+Für den kreuzfidelen Studio.
+}[µ]
+\stanza{
+    Auch von Lieb umgeben ist’s Studentenleben,µ
+Uns beschützet Venus Cypria.µ
+Mädchen, die da lieben und das Küssen üben,µ
+Waren stets in schwerer Menge da.µ
+Aber die da schmachten und platonisch trachtenµ
+Ach, die liebe Unschuld tut nur so;µ
+Denn so recht inwendig brennt es ganz unbändigµ
+Für den kreuzfidelen Studio.
+}[µ]
+\stanza{
+    Will zum Kontrahieren einer mich touchieren,;
+Gleich gefordert wird er augenblicks:;
+``Bist ein dummer Junge!" Und mit raschem Sprunge;
+Auf Mensur geht’s im Paukantenwichs.;
+Schleppfuchs muß die Waﬀen auf den Paukplatz schaﬀen,;
+Quarten pfeifen, Terzen schwirren froh.;
+Hat ein Schmiss gesessen, ist der Tusch vergessen;
+Von dem kreuzfidelen Studio.;
+}
+\stanza{
+    Vater spricht: ``Das Raufen und das Kneipenlaufenµ
+Nutzt dir zum Examen keinen Deut!"µ
+Doch dabei vergisst er, dass er ein Philister;µ
+Und dass jedes Ding hat seine Zeit.µ
+Traun! Das hieße lästern, schon nach sechs Semesternµ
+Ein Examen! Nein, das geht nicht so!µ
+Möcht nie auf Erden et was anders werdenµ
+Als ein kreuzfideler Studio.
+}[µ]
+\subsection*{BIER HER!}
+\index{BIER HER!}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Bier her! Bier her!\\
+Oder ich fall’um, juchei!\\
+Bier her! Bier her!\\
+Oder ich fall’um!\\
+Soll das Bier im Keller liegen\\
+Und ich hier die Ohnmacht kriegen?\\
+Bier her! Bier her!\\
+Oder ich fall’um!\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Bier her! Bier her!\\
+Oder ich fall’um, juchei!\\
+Bier her! Bier her!\\
+Oder ich fall’um!\\
+Wenn ich nicht gleich Bier bekumm’\\
+Schmeiss’ ich die ganze Kneipe um\\
+Bier her! Bier her!\\
+Oder ich fall’um!\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Frau her! Frau her!\\
+Oder ich spiel ab, juchei!\\
+Frau her! Frau her!\\
+Oder ich spiel ab!\\
+Soll die Frau im Bette liegen\\
+Und ich hier ein Slapfe kriegen?\\
+Frau her! Frau her!\\
+Oder ich spiel ab!\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{EINE SEEFAHRT}
+\index{EINE SEEFAHRT}
+\stanza{
+    Eine Seefahrt die ist lustig;
+Eine Seefahrt die ist schön,;
+Ja, da kann man was erleben;
+Ja, da kann man etwas sehen.
+}
+\chorus{
+    Hollahi hollaho;
+Hollahia hia hia, hollahia hia ho;
+Hollahi hollaho;
+Hollahia hia hia, hollaho!
+}
+\stanza{
+Einen schrecklich langen Bartsack;
+Den hat unser Kapitän;
+Raucht davor auch starken Tabak;
+Das man gar nichts mehr kann seh’n.
+}
+\stanza{
+Und der erste Oﬃzier;
+Ist besoﬀen wie ein Stier;
+Und der zweite Oﬃzier;
+Trinkt noch immer so viel Bier.
+}
+\stanza{
+Und der Koch in der Kambüse;
+Diese gottverdammte Sau,;
+Dauernd spuckt er ins Gemüse;
+Manchmal auch in den Kakau.
+}
+\stanza{
+    Eine Tonne Öl genommen;
+Drin ein kleiner Pinsel ist,;
+Und ’ne riesengroße Schnauze;
+Fertig ist der Maschinist.
+}
+\stanza{
+Steh nur auf, du faules Luder,;
+Steh nur auf, du faules Schwein,;
+Kohlen willst du kleine trimmen;
+Aber Heizer willst du sein.
+}
+\stanza{
+Und er haut ihn vor den Dassel;
+Dass er an die Reling fällt,;
+Und die heil’gen zwölf Apostel;
+Für ’ne Rauberbande hält.
+}
+\stanza{
+Und die schönen weißen Möwen;
+Sie erfüllen ihren Zweck,;
+Und sie scheißen, scheißen, scheißen;
+Auf das frischgewasch’ne Deck.
+}
+\stanza{
+In der Heimat angekommen;
+Fängt ein neues Leben an,;
+Eine Frau wird sich genommen;
+Kinder bringt der Weihnachtsmann.
+}
+\subsection*{KURFÜRST FRIEDRICH VON DER PFALZ}
+\index{KURFÜRST FRIEDRICH VON DER PFALZ}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Wütend wälzt sich einst im Bette\\
+Kurfürst Friedrich von der Pfalz;\\
+Gegen alle Etikette\\
+Brüllte er aus vollem Hals:\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X |c}
+"Wie kam gestern ich ins Nest? & \\
+Bin scheint’s wieder voll gewest!" & (BIS) \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Na, ein wenig schief geladen,\\
+Grinste d’rauf der Kammermohr,\\
+Selbst von Mainz des Bischofs G’naden\\
+Kamen mir benebelt vor,\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X |c}
+War halt doch ein schönes Fest, & \\
+Alles wieder voll gewest! & (BIS) \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+So? Du findest das zum Lachen?\\
+Sklavenseele, lache nur\\
+Künftig werd ich’s anders machen,\\
+Hassan, höre meine Schwur\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X |c}
+’s Letzte Mal, bei Tod und Pest, & \\
+War es, dass ich voll gewest! & (BIS) \\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Will ein sportlich’ Leben führen,\\
+Ganz mich der Gesundheit weihn,\\
+Um mein Tun zu kontrollieren\\
+Trag’ich’s in ein Tagebuch ein,\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X |c}
+Und ich ho?, dass ihr nicht lest, &\\
+Dass ich wieder voll gewest! & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Als der Kurfürst kam zu sterben,\\
+Machte er sein Testament,\\
+Und es fanden seine Erben\\
+Auch ein Buch in Pergament,\\
+Drinnen stand auf jeder Seit:\\
+"Seid vernünftig, liebe Leut,\\
+Dieses geb ich zu Attest:\\
+Heute wieder voll gewest!"\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Hieraus mag nun jeder sehen,\\
+Was ein guter Vorsatz nützt,\\
+Und wozu auch widerstehen,\\
+Wenn der volle Becher blitzt?\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X |c}
+Drum stoßt an! Probatum est: & \\
+Heute wieder voll gewest! & (BIS) \\
+\end{tabularx}
+\end{flushleft}
+\subsection*{LILI MARLEEN}
+\index{LILI MARLEENi}
+\info{M: Norbert Schultze, 1937}
+\par
+\stanza{
+Vor der Kaserne,;
+Vor dem großen Tor,;
+Stand eine Laterne,;
+Und steht sie noch davor,;
+So woll’n wir uns wiederseh’n,;
+Bei der Laterne woll’n wir steh’n;
+Wie einst Lili Marleen.
+}
+\stanzaSingleExtra{
+Uns’re beiden Schatten;
+Seh’n wie einer aus.;
+Dass wir so lieb uns hatten,;
+Das sah man gleich daraus.;
+Und alle Leute soll’n es seh’n,;
+Wenn wir bei der Laterne steh’n;
+Wie einst Lili Marleen. & (BIS)
+}[0.7]
+\stanzaSingleExtra{
+Schon rief der Posten,;
+Sie blasen Zapfenstreich,;
+Es kann drei Tage kosten.;
+Kam’rad ich komm’ sogleich!;
+Da sagten wir auf Wiedersehn.;
+Wie gerne wollt’ich mit dir geh’n,;
+Mit dir, Lili Marleen. & (BIS)
+}[0.7]
+\stanzaSingleExtra{
+Deine Schritte kennt sie,;
+Deinen zarten Gang,;
+Alle Abend brennt sie,;
+Doch mich vergaß sie lang.;
+Und sollte mir ein Leid gescheh’n,;
+Wer wird bei der Laterne steh’n,;
+Mit dir, Lili Marleen? & (BIS)
+}[0.7]
+\stanzaSingleExtra{
+Aus dem stillen Raume,;
+Aus der Erde Grund;
+Hebt mich wie im Traume;
+Dein verliebter Mund. & (BIS);
+Wenn sich die späten Nebel dreh’n;
+Werd’ ich bei der Laterne steh’n;
+Wie einst Lili Marleen. & (BIS)
+}[0.7]
+\newpage
+    \section*{ENGELSTALIGE LIEDEREN}
+\subsection*{COCKLES AND MUSSELS}
+\index{COCKLES AND MUSSELS}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+In Dublin’s fair city,\\
+Where the girls are so pretty\\
+I first set my eyes on sweet Molly Malone,\\
+As she wheeled her wheelbarrow\\
+Thro’ streets broad and narrow\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+\textit{Crying: "Cockles and Mussels, alive, alive oh!"}\\
+\end{tabularx}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X |c}
+\textit{Alive, alive oh! Alive, alive oh!} & \\
+\textit{Crying: "Cockles and Mussels, alive, alive oh!"} & (BIS)\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+She was a fishmonger,\\
+And sure ’t was no wonder\\
+For so were her father and mother before;\\
+And they each wheeled their barrow\\
+Through streets broad and narrow\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+She died of a fever\\
+And no one could save her\\
+And that was the end of sweet Molly Malone;\\
+Her ghost wheels her barrow\\
+Through streets broad and narrow\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{HOME ON THE RANGE}
+\index{HOME ON THE RANGE}
+\info{M: Daniel E. Kelley}
+\info{Volkslied van Kansas (U.S.A.)}
+\stanza{Oh, give me a home, where the buﬀalo roam;
+Where the deer and the antelope play;
+Where seldom is heard a discouraging word;
+And the skies are not cloudy all day.
+}
+\stanza{
+Home, home on the range;
+Where the deer and the antelope play;
+Where seldom is heard a discouraging word;
+And the skies are not cloudy all day.
+}
+\stanza{
+How often at night where the heavens are bright;
+With the light from the glittering stars;
+Have I stood there amazed and I asked as I gazed;
+If their glory exceeds that of ours.
+}
+\stanza{
+Oh, give me a land where the bright diamond sand;
+Flows leisurely down the stream;
+Where the graceful, white swan goes gliding along;
+Like a maid in a heavenly dream.
+}
+\stanza{
+Where the air is so pure, the zephyrs so free,;
+The breezes so balmy and light,;
+That I would not exchange my home on the range;
+For all of the cities so bright.
+}
+\subsection*{RED RIVER VALLEY}
+\index{RED RIVER VALLEY}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+From this valley they say you are going;\\
+We will miss your bright eyes and sweet smile;\\
+For they say, you are taking the sunshine,\\
+That brightens our pathway the while.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+\textit{Come and sit by my side if you love me;}\\
+\textit{Do not hasten to bid me adieu;}\\
+\textit{But remember the Red River Valley}\\
+\textit{And the one that has loved you so true.}\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+Won’t you think of the valley you’re leaving;\\
+Oh, how lonely, how sad it will be;\\
+Oh, think of the fond heart you’re breaking\\
+And the grief you are coming me to see.\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+As you go to your home by the ocean;\\
+May you never forget those sweet hours;\\
+That we spent in the Red River Valley\\
+And the love we exchanged ’mid the flowers.\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{THE STONECUTTERS SONG}
+\index{STONECUTTERS SONG, THE}
+\info{M: Alf Clausen}
+\info{Gesproken:}
+\stanza{
+You have joined the sacred order of the Stonecutters, who,;
+since ancient times, have split the rocks of ignorance that;
+obscure the light of knowledge and truth.;
+Now let’s all get drunk and play ping-pong!
+}
+\stanza{
+Who controls the British crown?;
+Who keeps the metric system down?;
+We do! We do!
+}
+\stanza{
+Who leaves Atlantis oﬀ the maps?;
+Who keeps the Martians under wraps?;
+We do! We do!
+}
+\stanza{
+Who holds back the electric car?;
+Who makes Steve Guttenberg a star?;
+We do! We do!
+}
+\stanza{
+Who robs cave fish of their sight?;
+Who rigs every Oscar night?;
+We do! We do!
+}
+\subsection*{TOM DOOLEY}
+\index{TOM DOOLEY}
+\info{Gesproken:}
+\stanza{
+    Throughout history there have been stories and many songs,;
+written about the trouble triangle. This next one tells the;
+story of a Mr. Greeson, a beautiful woman and a condemned;
+man, named Tom Dooley. When the sun rises tomorrow, Tom;
+Dooley must hang
+}
+\stanza{
+Hang down your head, Tom Dooley,;
+Hang down your head and cry,;
+Hang down your head, Tom Dooley,;
+Poor boy, you’re bound to die.
+}
+\stanza{
+I met her on the mountain,;
+There I took her life,;
+I met her on the mountain,;
+And stabbed her with my knife.
+}
+\stanza{
+By this time tomorrow,;
+Reckon where I’ll be,;
+Hadn’t it been for Greeson,;
+I had been in Tennessee.
+}
+\stanza{
+By this time tomorrow,;
+Reckon where I’ll be,;
+In some lonesome valley,;
+A-hanging from a white oak tree.
+}
+\newpage
+\section*{ANDERSTALIGE LIEDEREN}
+\subsection*{A, A, A, VALETE STUDIA}
+\index{A, A, A, VALETE STUDIA}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+A, a, a, valete studia! Valete studia!\\
+Studia relinquimus, patriam repetimus,\\
+A, a, a, valete studia! Valete studia.\\
+Valete studia!\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    c >{\raggedright\arraybackslash}X }
+\hspace{5mm} & {\small De volgende strofes worden op dezelfde manier gezongen. - The following stanzas are sung in the same way.}\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+E, e, e, ite miseriae!\\
+Instant nobis feriae,\\
+Quo fruamur hodie, ...\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+I, i, i, bibunt philosophi!\\
+Studiosi parvuli,\\
+Etiam sunt bibuli, ...\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+O, o, o, nil est in poculo:\\
+Repleatur denuo!\\
+Nummi sunt in sacculo, ...\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+U, u, u, ingenti spiritu!\\
+Celebramus epulas,\\
+Cras Habemus ferias, ...\\
+\end{tabularx}
+\end{flushleft}
+\begin{flushleft}
+\begin{tabularx}{\textwidth} {
+    >{\raggedright\arraybackslash}X}
+IJ, ij, ij, kom schenk en drink met mij;\\
+Want wij zijn hier niet gekomen,\\
+Om te slapen of te dromen, ...\\
+\end{tabularx}
+\end{flushleft}
+\subsection*{FILIA PASTORIS}
+\index{FILIA PASTORIS}
+\info{De strofen zijn respectievelijk in het Latijn, klassiek Grieks, Duits,
+Pools en Nederlands.}
+\stanzaSingleExtra{
+Quae voluptas quae voluptas;
+Est amare & (BIS);
+Pulchram filiam pastoris!;
+O admiranda, o admiranda,;
+O admiranda filia pastoris! & (BIS)
+}
+\info{Volgende strofen worden op dezelfde manier gezongen}
+\stanza{
+Hedonè oiè, hedonè oiè;
+Estin Agapain;
+Kalèn paida poimenos!;
+O thaumasia, o thaumasia,;
+O thaumasia paida poimenos!
+}
+\stanza{
+    Welch Vergnügen welch Vergnügen;
+Ist’s zu lieben;
+Des Hirten schönstes Töchterlein!;
+O wunderbares, o wunderbares,;
+O wunderbares Hirten Töchterlein!
+}
+\stanza{
+Co za radosc, co zo radosc;
+Jest kochanie;
+Piekna corke pastora!;
+O nadzwyczajna, o nadzwyczajna;
+O nadzwyczajna corko pastora!
+}
+\stanza{
+Welk genoegen welk genoegen;
+Is’t te minnen;
+’t Mooiste meisje van de stad!;
+O wonderbaarste, o wonderbaarste,;
+O wonderbaarste meisje van de stad!
+}
+\subsection*{GERTJIE}
+\index{GERTJIE}
+\stanza{Wanneer kom ons troudag, Gertjie, Gertjie?;
+Hoe’s dit dan so stil met jou?;
+Ons is so lank verloof al Gertjie, Gertjie;
+Dit is de tyd dat ons ga trou.
+}
+\stanza{
+Glo tog Gertjie, ek sal nooit nie, nooit nie;
+Nog langer an jou sleeptou bly nie, bly nie;
+Jy dink miskien: ek kan nie dood nie, dood nie;
+Maar my jare gaan verby.
+}
+\stanza{
+’k Hoor jy is verliefd op Sarie, Sarie;
+Maar die pret moet jy laat staan.;
+Pas maar op vir Pieter en Danie, Danie;
+Hul is kerls, wat somaer slaan.
+}
+\stanza{
+Jy weet, as ons Sondags kuier, kuier;
+Agter om die kop verby;
+Dan seg ek: “Nonnie, lig jou sluier, sluier;
+Kom en gee een soen vir my.”
+}
+\stanza{
+Jannie, al die soentjes help nie, help nie;
+Kyk vir Pieter en vir Griet,;
+Vandag wil hul mekaar nie hé nie, hé nie;
+Al die soentjes is verniet.
+}
+\stanza{
+Ons moet dan die pret maar staan laat, staan laat;
+Ons moet maar die soen laat bly,;
+Ek sal myn eie pad dan kry maar, kry maar;
+En jy kan na Sarie vry, vry, vry.
+}
+\subsection*{STUDENTELIED}
+\index{STUDENTELIED}
+\stanza{
+    Die studentejare gaan verby,µ
+Verby studenteweelde;µ
+Nooit keer hul ooit terug vir my:µ
+Die tyd, die lieflingsbeelde,µ
+Die koringmeul wil nie meer maal,µ
+My skulde moet ek self betaal!µ
+O treurigheid op noteµ
+Ek staan op eie pote.
+}[µ]
+\stanza{
+Soos mieliepitte spat uiteenµ
+Die oue troue vrinde;µ
+Ek staan nou moedersiel alleenµ
+En is maar net bediendeµ
+Ek is nie meer myn eie baas,µ
+Ek werk met Paul en Piet en Klaas.µ
+O treurigheid op noteµ
+Ek staan op eie pote.
+}[µ]
+\newpage
+\info{
+De oudstudenten staan recht.
+}
+\par
+\stanza{
+Maar moe nie glô, al word ons oud,µ
+Ons hart kan ooit verander,µ
+Ons liefde is nog lang nie koud,µ
+Ons sta nog by mekander.µ
+Dus vriende reik mekaar die hand,µ
+Hernuw die heil’ge vriendskapsband,µ
+Gaan dit met stamp’ en stote,µ
+Nog bly ons op ons pote.µ
+Die studentejare gaan verby,µ
+Verby studenteweelde;µ
+Nooit keer hul ooit terug vir my:µ
+Die tyd, die lieflingsbeelde,µ
+Die koringmeul wil nie meer maal,µ
+My skulde moet ek self betaal!µ
+O treurigheid op noteµ
+Ek staan op eie pote.
+}[µ]
+\stanza{
+Soos mieliepitte spat uiteenµ
+Die oue troue vrinde;µ
+Ek staan nou moedersiel alleenµ
+En is maar net bediendeµ
+Ek is nie meer myn eie baas,µ
+Ek werk met Paul en Piet en Klaas.µ
+O treurigheid op noteµ
+Ek staan op eie pote.
+}[µ]
+\info{
+De oudstudenten staan recht.
+}
+\par
+\stanza{
+Maar moe nie glô, al word ons oud,;
+Ons hart kan ooit verander,;
+Ons liefde is nog lang nie koud,;
+Ons sta nog by mekander.;
+Dus vriende reik mekaar die hand,;
+Hernuw die heil’ge vriendskapsband,;
+Gaan dit met stamp’ en stote,;
+Nog bly ons op ons pote.
+}
+\begin{center}
+    \printindex
+\end{center}
+\begin{center}
+   \section*{Credits}
+    \subsection*{Organisatie}
+    Sander deBeer (KBS)\\
+    Elisa Willemssens (KBS)\\
+    Gérard Lichtert ('t VAT)\\
+    Keanu Robberechts ('t VAT)\\
+    Loïc Palacio Zecchini (Woltje)\\
+    Gil Van Roye (Woltje)\\
+    De rest van de besturen van 't VAT, KBS en Woltje\\
+   \subsection*{Auteur}
+    Gérard Lichtert ('t VAT)\\
+    Degene die het boekje van vorig jaar gemaakt heeft\\
+\end{center}
+\end{document}
